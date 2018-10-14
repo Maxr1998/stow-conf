@@ -1,0 +1,66 @@
+{
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "editor.fontFamily": "'DankMono','Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.fontWeight": "400",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.letterSpacing": 0.5,
+    "editor.lineHeight": 25,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "storage.modifier",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#ff9D00"
+                }
+            },
+            {
+                "scope": "keyword.control",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#ff9D00"
+                }
+            },
+            {
+                "scope": "storage.type",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#ff9D00"
+                }
+            }
+        ]
+    },
+    "editor.useTabStops": false,
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": false,
+    "files.trimTrailingWhitespace": true,
+    "go.formatTool": "gofmt",
+    "html.format.endWithNewline": false,
+    "html.format.indentInnerHtml": false,
+    "html.format.unformatted": "script",
+    "indentRainbow.ignoreErrorLanguages": [
+        "markdown",
+        "plaintext"
+    ],
+    "indentRainbow.indentSetter": {
+        "css": {
+            "tabSize": 2
+        },
+        "html": {
+            "tabSize": 2
+        },
+        "javascript": {
+            "tabSize": 4
+        }
+    },
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Cobalt2"
+}

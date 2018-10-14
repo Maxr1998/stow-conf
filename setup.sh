@@ -45,8 +45,9 @@ if count $argv > /dev/null
 end
 
 colorecho "Setting up directories"
-mkdir -p ~/.vim/ftdetect/
 mkdir -p ~/.config/fish/
+mkdir -p ~/.vim/ftdetect/
+mkdir -p ~/.config/Code\ -\ OSS/User/
 
 colorecho "Checking for Vundle"
 if not test -d ~/.vim/bundle/Vundle.vim
