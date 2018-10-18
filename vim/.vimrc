@@ -34,7 +34,6 @@ set tabstop=4 " Make tabs appear 4 spaces wide
 set expandtab " Convert tabs to spaces
 set shiftwidth=4 " Indent width for spaces (but same as tabstop)
 
-autocmd FileType c setlocal noexpandtab
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
