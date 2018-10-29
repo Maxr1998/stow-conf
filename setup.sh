@@ -24,7 +24,7 @@ if count $argv > /dev/null
         sudo pacman -S --needed \
             fish jq openbsd-netcat reflector rsync \
             i3-wm \
-            gnome-control-center gnome-terminal gnome-tweaks \
+            gnome-terminal \
             fontconfig cantarell-fonts gsfonts pango terminus-font ttf-dejavu ttf-fira-code ttf-roboto \
             xorg-xinput xorg-font-util xorg-font-utils \
             feh mpv steam steam-native-runtime thefuck
@@ -38,7 +38,7 @@ if count $argv > /dev/null
     colorecho "Install manually afterwards:"
     colorecho "- https://aur.archlinux.org/package-query.git"
     colorecho "- https://aur.archlinux.org/yay.git"
-    colorecho "yay -S --needed --noconfirm discord google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop luckybackup \\"
+    colorecho "yay -S --needed --noconfirm discord dmenu-height google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop luckybackup \\"
     colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
     colorecho
     sleep 3
