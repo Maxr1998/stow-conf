@@ -38,6 +38,9 @@
         ]
     },
     "editor.useTabStops": false,
+    "files.associations": {
+        "*.tmpl": "html"
+    },
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": false,
@@ -61,6 +64,7 @@
             "tabSize": 4
         }
     },
+    "revealjs.browserPath": "/usr/bin/google-chrome-stable",
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Cobalt2"
 }
