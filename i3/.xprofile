@@ -1,0 +1,26 @@
+#!/bin/sh
+# WARNING! This file should not be executed directly.
+# Shebang here is for shellcheck.
+#
+# ~/.xprofile
+#
+# sourced by /etc/gdm/Xsession
+#
+# Allows you to execute commands at the beginning
+# of the X user session - before the WM is started.
+#
+# WARNING! This file should only contain
+# POSIX-compliant commands and directives.
+# Providing, for example, bash-specific commands will result
+# in X server crash.
+
+# Set scaling
+xrandr --output eDP-1 --dpi 110
+
+# Setup gnome-keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+# Set wallpaper
+$HOME/.fehbg
+
