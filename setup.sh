@@ -13,6 +13,8 @@ end
 colorecho "Refreshing submodules"
 git submodule init
 git submodule update --init --recursive --remote
+git apply --check --directory=i3/.config/i3/i3blocks-contrib/ battery.patch 2> /dev/null; and \
+    git apply --directory=i3/.config/i3/i3blocks-contrib/ battery.patch
 
 if count $argv > /dev/null
     and [ $argv[1] = "pkg" ]

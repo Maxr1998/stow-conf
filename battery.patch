@@ -1,0 +1,38 @@
+diff --git a/battery2/battery2 b/battery2/battery2
+index b23dfdd..bcf6fb8 100755
+--- a/battery2/battery2
++++ b/battery2/battery2
+@@ -49,16 +49,16 @@ else:
+         percentleft = 0
+ 
+     # stands for charging
+-    FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
++    FA_LIGHTNING = "<span>\u26a1</span>"
+ 
+     # stands for plugged in
+-    FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
++    FA_PLUG = "<span>\U0001f50c</span>"
+ 
+     # stands for using battery
+-    FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
++    FA_BATTERY = "<span>\U0001f50b</span>"
+ 
+     # stands for unknown status of battery
+-    FA_QUESTION = "<span font='FontAwesome'>\uf128</span>"
++    FA_QUESTION = "<span>\u2753</span>"
+ 
+ 
+     if state == "Discharging":
+@@ -67,10 +67,10 @@ else:
+         fulltext = FA_PLUG + " "
+         timeleft = ""
+     elif state == "Unknown":
+-        fulltext = FA_QUESTION + " " + FA_BATTERY + " "
++        fulltext = FA_QUESTION + " "
+         timeleft = ""
+     else:
+-        fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
++        fulltext = FA_PLUG + " " + FA_LIGHTNING + " "
+ 
+     def color(percent):
+         if percent < 10:
