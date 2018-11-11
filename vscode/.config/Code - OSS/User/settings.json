@@ -66,5 +66,8 @@
     },
     "revealjs.browserPath": "/usr/bin/google-chrome-stable",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Cobalt2"
+    "workbench.colorTheme": "Cobalt2",
+    "files.associations": {
+        "*.tmpl": "html"
+    }
 }
