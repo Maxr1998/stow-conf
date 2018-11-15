@@ -46,6 +46,7 @@
     "files.trimFinalNewlines": false,
     "files.trimTrailingWhitespace": true,
     "go.formatTool": "gofmt",
+    "go.inferGopath": true,
     "html.format.endWithNewline": false,
     "html.format.indentInnerHtml": false,
     "html.format.unformatted": "script",
@@ -62,10 +63,15 @@
         },
         "javascript": {
             "tabSize": 4
+        },
+        "yaml": {
+            "tabSize": 2
         }
     },
     "revealjs.browserPath": "/usr/bin/google-chrome-stable",
     "terminal.integrated.fontSize": 16,
+    "terminal.integrated.rendererType": "dom",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Cobalt2"
+    "workbench.colorTheme": "Cobalt2",
+    "workbench.settings.editor": "json"
 }
