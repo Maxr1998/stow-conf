@@ -14,6 +14,10 @@
 # Providing, for example, bash-specific commands will result
 # in X server crash.
 
+# Set timeout
+xset dpms 0 0 1800
+xset s off
+
 # Set scaling
 xrandr --output eDP-1 --dpi 110
 
