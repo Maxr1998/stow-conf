@@ -17,7 +17,7 @@ git apply --check --directory=i3/.config/i3/i3blocks-contrib/ battery.patch 2> /
     git apply --directory=i3/.config/i3/i3blocks-contrib/ battery.patch
 
 if count $argv > /dev/null
-    and [ $argv[1] = "pkg" ]
+    and test $argv[1] = "pkg"
     which pacman > /dev/null
     if test $status -eq 0
         colorecho "Arch Linux detected, installing packages if required.."
@@ -30,19 +30,20 @@ if count $argv > /dev/null
             fontconfig cantarell-fonts gsfonts pango terminus-font ttf-dejavu ttf-fira-code ttf-roboto \
             xorg-xinput xorg-font-util xorg-font-utils \
             feh mpv steam steam-native-runtime thefuck
+        echo
+        colorecho "Installing custom config package"
+        set stow_root "$PWD"
+        cd i3/.config/i3/arch_pkg/
+        makepkg -fci
+        cd $stow_root
+        echo "\n"
+        colorecho "Install manually afterwards:"
+        colorecho "- https://aur.archlinux.org/package-query.git"
+        colorecho "- https://aur.archlinux.org/yay.git"
+        colorecho "yay -S --needed --noconfirm discord dmenu-height google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop luckybackup \\"
+        colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
+        echo "\n"
     end
-    colorecho "Installing custom config package"
-    set stow_root "$PWD"
-    cd i3/.config/i3/arch_pkg/
-    makepkg -fci
-    cd $stow_root
-    colorecho
-    colorecho "Install manually afterwards:"
-    colorecho "- https://aur.archlinux.org/package-query.git"
-    colorecho "- https://aur.archlinux.org/yay.git"
-    colorecho "yay -S --needed --noconfirm discord dmenu-height google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop luckybackup \\"
-    colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
-    colorecho
     sleep 3
 end
 
