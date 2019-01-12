@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'herrbischoff/cobalt2.vim'        " Cobalt 2
 Plugin 'flazz/vim-colorschemes'          " More color schemes
 Plugin 'Yggdroot/indentLine'             " Leading spaces
+Plugin 'wakatime/vim-wakatime'           " Time tracking
 Plugin 'FredKSchott/CoVim'               " Co-op coding
 Plugin 'HerringtonDarkholme/yats.vim'    " TypeScript Syntax
 Plugin 'godlygeek/tabular'               " Markdown support
@@ -50,3 +51,8 @@ let g:indentLine_leadingSpaceChar = '.'
 
 " vim-markdown
 let g:vim_markdown_conceal = 0
+
+" GVIM CONFIG
+if has("gui_running")
+    set guifont=DankMono\ 13
+endif
