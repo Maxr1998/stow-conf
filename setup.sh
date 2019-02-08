@@ -24,7 +24,7 @@ if count $argv > /dev/null
         sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
         sudo pacman -Syu
         sudo pacman -S --needed \
-            fish jq openbsd-netcat reflector rsync \
+            borg clipmenu clipnotify fish jq openbsd-netcat reflector rsync \
             i3-wm \
             gnome-terminal \
             fontconfig cantarell-fonts gsfonts pango terminus-font ttf-dejavu ttf-fira-code ttf-roboto \
