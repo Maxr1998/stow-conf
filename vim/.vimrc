@@ -39,6 +39,8 @@ autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
 
+autocmd FileType asm setlocal noexpandtab
+
 " Utility macros
 let @l = "/\\80i d79|l"
 
