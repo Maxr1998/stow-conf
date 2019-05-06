@@ -17,10 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'herrbischoff/cobalt2.vim'        " Cobalt 2
 Plugin 'flazz/vim-colorschemes'          " More color schemes
+Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'             " Leading spaces
 Plugin 'wakatime/vim-wakatime'           " Time tracking
-Plugin 'FredKSchott/CoVim'               " Co-op coding
-Plugin 'HerringtonDarkholme/yats.vim'    " TypeScript Syntax
 Plugin 'godlygeek/tabular'               " Markdown support
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
