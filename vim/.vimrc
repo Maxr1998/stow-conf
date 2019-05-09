@@ -17,11 +17,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'herrbischoff/cobalt2.vim'        " Cobalt 2
 Plugin 'flazz/vim-colorschemes'          " More color schemes
+Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
 Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'             " Leading spaces
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 Plugin 'godlygeek/tabular'               " Markdown support
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 filetype plugin indent on
 
