@@ -2,9 +2,9 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "editor.fontFamily": "'DankMono','Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Dank Mono','Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "editor.fontWeight": "400",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
