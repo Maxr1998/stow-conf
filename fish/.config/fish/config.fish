@@ -9,6 +9,8 @@ thefuck --alias | source
 set -gx BAT_PAGER ""
 
 # Environment
+set -gx PATH $PATH $HOME/.local/bin
+
 set -gx ANDROID_HOME $HOME/Development/sdk/
 set -gx NDK_ROOT $HOME/Development/ndk/current/
 set -gx ANDROID_HVPROTO ddm
