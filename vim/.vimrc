@@ -20,6 +20,7 @@ Plugin 'flazz/vim-colorschemes'          " More color schemes
 Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
 Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'             " Leading spaces
+Plugin 'PeterRincker/vim-argumentative'  " Argument magic
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 Plugin 'godlygeek/tabular'               " Markdown support
 "Plugin 'plasticboy/vim-markdown'
