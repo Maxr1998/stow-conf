@@ -6,7 +6,7 @@ function switch_monitor --description 'Switch to a different monitor'
         echo "Monitor isn't attached"
         exit
     end
-    set write_val 18
+    set write_val 17
     if test (count $argv) -gt  0
         if test $argv[1] = "disconnect"
             set write_val 16
