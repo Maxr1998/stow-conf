@@ -23,30 +23,25 @@ if count $argv > /dev/null
         colorecho "Arch Linux detected, installing packages if required.."
         sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
         sudo pacman -Syu
-        sudo pacman -S --needed \
-            borg clipmenu clipnotify fish jq openbsd-netcat reflector rsync \
-            i3-wm \
-            gnome-terminal \
-            fontconfig cantarell-fonts gsfonts pango terminus-font ttf-dejavu ttf-fira-code ttf-roboto \
-            xorg-xinput xorg-font-util xorg-font-utils \
-            feh mpv steam steam-native-runtime thefuck
+        sudo pacman -S --needed (cat pkgs.txt)
         echo
         colorecho "Installing custom config package"
         set stow_root "$PWD"
         cd i3/.config/i3/arch_pkg/
         makepkg -fci
         cd $stow_root
-        echo "\n"
+        echo
         colorecho "Install manually afterwards:"
         colorecho "- https://aur.archlinux.org/package-query.git"
         colorecho "- https://aur.archlinux.org/yay.git"
         colorecho "yay -S --needed --noconfirm discord dmenu-height google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop \\"
         colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
-        echo "\n"
+        echo
     end
     sleep 3
 end
 
+echo
 colorecho "Setting up directories"
 mkdir -p ~/.config/fish/
 mkdir -p ~/.vim/ftdetect/
