@@ -1,7 +1,6 @@
 amd-ucode
 android-tools
 android-udev
-ant
 asp
 autoconf
 automake
@@ -13,6 +12,7 @@ bash
 bat
 bind-tools
 binutils
+binwalk
 bison
 borg
 bzip2
@@ -31,6 +31,7 @@ device-mapper
 dfu-programmer
 dhcpcd
 diffutils
+discord
 docker
 docker-compose
 e2fsprogs

@@ -1,7 +1,6 @@
 anydesk
 chromedriver
 ddccontrol
-discord
 dmenu-height
 gamemode
 google-chrome
