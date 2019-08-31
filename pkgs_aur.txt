@@ -13,13 +13,11 @@ indicator-kdeconnect-git
 j4-dmenu-desktop
 lib32-gamemode
 lib32-gperftools
-lib32-mesa-aco-git
 linux-maxr1998
 linux-maxr1998-headers
 lohit-fonts
 masterpassword-cli
 maxr1998_i3-config
-mesa-aco-git
 minecraft-launcher
 mprime
 multimc5
@@ -28,10 +26,11 @@ numix-circle-icon-theme-git
 pxz
 python-pychromecast-git
 radeontop
-rv8-git
 scrcpy
+simple-shutdown-dialog-git
 spicetify-cli
 spotify
+steam-native-pcre-fix
 ttf-font-icons
 ttf-impallari-dancing-script
 ttf-vlgothic
@@ -40,3 +39,5 @@ uml_utilities
 vramfs-git
 windscribe-cli
 yay
+zenmonitor-git
+zenpower-dkms-git
