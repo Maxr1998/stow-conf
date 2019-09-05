@@ -89,7 +89,6 @@ iotop
 iproute2
 iputils
 jdk10-openjdk
-jdk8-openjdk
 jfsutils
 jq
 kdeconnect
@@ -137,8 +136,6 @@ opencl-headers
 opencl-mesa
 openjdk10-doc
 openjdk10-src
-openjdk8-doc
-openjdk8-src
 pacman
 pacman-contrib
 pacutils
