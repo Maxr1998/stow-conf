@@ -15,7 +15,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'herrbischoff/cobalt2.vim'        " Cobalt 2
+"Plugin 'tomasr/molokai'                 " Original Molokai
 Plugin 'flazz/vim-colorschemes'          " More color schemes
 Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
 Plugin 'tpope/vim-fugitive'
@@ -23,7 +23,7 @@ Plugin 'Yggdroot/indentLine'             " Leading spaces
 Plugin 'PeterRincker/vim-argumentative'  " Argument magic
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 Plugin 'godlygeek/tabular'               " Markdown support
-"Plugin 'plasticboy/vim-markdown'
+Plugin 'ycm-core/YouCompleteMe'          " Auto-complete
 call vundle#end()
 filetype plugin indent on
 
