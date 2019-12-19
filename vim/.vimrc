@@ -24,6 +24,7 @@ Plugin 'PeterRincker/vim-argumentative'  " Argument magic
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 Plugin 'godlygeek/tabular'               " Markdown support
 Plugin 'ycm-core/YouCompleteMe'          " Auto-complete
+Plugin 'lervag/vimtex'                   " TeX support
 call vundle#end()
 filetype plugin indent on
 
