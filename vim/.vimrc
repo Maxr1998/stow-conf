@@ -27,21 +27,24 @@ Plugin 'ycm-core/YouCompleteMe'          " Auto-complete
 call vundle#end()
 filetype plugin indent on
 
-" Max's Customisations
+" Max's customisations
 set number
 set nofoldenable
 set nofixendofline
 set tabstop=4 " Make tabs appear 4 spaces wide
-
 set expandtab " Convert tabs to spaces
-set shiftwidth=4 " Indent width for spaces (but same as tabstop)
+set shiftwidth=4 " Indent width for spaces
 
+" Shiftwidth customisations by language
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
 
+" Disable quote concealing in JSON files
+let g:vim_json_conceal=0
+
 " Utility macros
-let @l = "/\\80i d79|l"
+let @l = "/\\80i d79|l" " sanitize \\ indention
 
 " PLUGIN CONFIGURATION
 " Color scheme
