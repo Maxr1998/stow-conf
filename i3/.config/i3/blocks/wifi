@@ -1,0 +1,11 @@
+#!/bin/bash
+cat /proc/net/wireless | awk -v ssid="$(iwgetid -r)" '/wlan0/ {
+    level = int($4)
+    text = "WLAN: "level" dBm in "ssid
+    print text
+    print text
+    print (level >= -60) ? "#00ff00" : (level >= -80) ? "#ffff00" : "#ff0000"
+    exit
+}'
+exit 0
+

@@ -1,0 +1,27 @@
+#!/usr/bin/fish
+set DEVICE_NAME "AT Translated Set 2 keyboard"
+
+if not xinput list-props "$DEVICE_NAME" > /dev/null ^ /dev/null
+    exit 0
+end
+
+function keyboard_state
+    if not set xinput_output (xinput list-props "$DEVICE_NAME" 2> /dev/null)
+        return 1
+    end
+    return (test (string join \n $xinput_output | awk '/Device Enabled/{ print $4 }' | sed 's/[^0-9]*//g') -eq 1)
+end
+
+if test "$BLOCK_BUTTON" = "1"
+    if keyboard_state
+        xinput set-prop "$DEVICE_NAME" "Device Enabled" 0 # Disable
+    else
+        xinput set-prop "$DEVICE_NAME" "Device Enabled" 1 # Enable
+    end
+end
+
+if keyboard_state
+    echo "1"
+else
+    echo "0"
+end
