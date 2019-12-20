@@ -38,6 +38,7 @@
         ]
     },
     "editor.useTabStops": false,
+    "explorer.confirmDragAndDrop": false,
     "files.associations": {
         "*.tmpl": "html"
     },
@@ -68,11 +69,12 @@
             "tabSize": 2
         }
     },
+    "liveshare.featureSet": "stable",
+    "platformio-ide.useBuiltinPIOCore": true,
     "revealjs.browserPath": "/usr/bin/google-chrome-stable",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.rendererType": "dom",
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Cobalt2",
     "workbench.settings.editor": "json",
-    "liveshare.featureSet": "stable"
 }
