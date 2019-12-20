@@ -10,11 +10,13 @@ function colorecho
 	tput sgr0
 end
 
+set -l I3_DIR i3/.config/i3
+
 colorecho "Refreshing submodules"
 git submodule init
 git submodule update --init --recursive --remote
-git apply --check --directory=i3/.config/i3/i3blocks-contrib/ battery.patch 2> /dev/null; and \
-    git apply --directory=i3/.config/i3/i3blocks-contrib/ battery.patch
+git apply --check --directory=$I3_DIR/i3blocks-contrib/ $I3_DIR/battery.patch 2> /dev/null; and \
+    git apply --directory=$I3_DIR/i3blocks-contrib/ $I3_DIR/battery.patch
 
 if count $argv > /dev/null
     and test $argv[1] = "pkg"
