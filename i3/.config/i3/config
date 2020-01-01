@@ -6,6 +6,7 @@
 
 set $mod Mod1
 set $mode_resize "Fenster anpassen"
+set $bar_background #000000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -24,7 +25,7 @@ bindsym Control+$mod+T exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --usage-log="$HOME/.cache/dmenu_usage.log" --use-xdg-de --no-generic --dmenu="dmenu -h 28 -nb '#212121' -nf '#fafafa' -sb '#4285f4' -sf '#ffffff' -i"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --usage-log="$HOME/.cache/dmenu_usage.log" --use-xdg-de --no-generic --dmenu="dmenu -h 28 -nb '$bar_background' -nf '#fafafa' -sb '#4285f4' -sf '#ffffff' -i"
 bindsym $mod+c exec --no-startup-id i3-input -F 'exec %s'
 
 # Change focus
@@ -155,16 +156,19 @@ client.background #000000
 # finds out, if available)
 bar {
     position top
+    i3bar_command i3bar
+    #--transparency
     status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks
     tray_output primary
 
     colors {
-        background #212121
-        separator #212121
+        background $bar_background
+        separator $bar_background
 
         focused_workspace #4285f4 #4285f4 #ffffff
         active_workspace #333333 #333333 #ffffff
-        inactive_workspace #212121 #212121 #ffffff
+        urgent_workspace #a00000 #a00000 #ffffff
+        inactive_workspace $bar_background $bar_background #ffffff
    }
 }
 
