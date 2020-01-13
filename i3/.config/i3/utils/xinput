@@ -10,5 +10,5 @@ xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Natural Scrolling Enab
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Left Handed Enabled" 1
 
 # Keyboard
-setxkbmap -layout de -variant nodeadkeys -option 'grp:win_space_toggle'
+setxkbmap -layout de -variant nodeadkeys -option 'grp:win_space_toggle' 'caps:escape_shifted_capslock'
 
