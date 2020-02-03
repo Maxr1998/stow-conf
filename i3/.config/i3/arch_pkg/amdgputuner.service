@@ -1,8 +1,5 @@
 [Unit]
-Description=Apply GPU settings on boot
+Description=Apply GPU settings
 
 [Service]
 ExecStart=/usr/bin/amdgputuner
-
-[Install]
-WantedBy=multi-user.target
