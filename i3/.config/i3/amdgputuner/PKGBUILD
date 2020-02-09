@@ -1,0 +1,27 @@
+# Maintainer: Maxr1998 <max@maxr1998.de>
+pkgname=amdgputuner
+pkgver=1.0
+pkgrel=1
+pkgdesc="amdgpu tweaks and helper scripts"
+arch=("any")
+url="https://github.com/Maxr1998/stow-conf"
+license=('WTFPL')
+depends=("bash" "mesa" "lib32-mesa" "vulkan-radeon" "xf86-video-amdgpu" "libva-mesa-driver")
+source=("amdgputuner"
+        "amdgputop"
+        "amdgputuner.service"
+        "amdgputuner.timer")
+sha512sums=("8af240ebad06241e5d870d171503978579ade09c4abb8258b8b4062506950c5768ac2edd8f8eda5734540c4f8c5d9d73613ec9762b177b586dbae0090396e429"
+            "263a640ae7a7f6c5bcec4cf651f98d10bc65464925d78ceec3a317fd4801da35963800d54d0b30d72b2af5094986f416425893d3310c80e484e214aa2d2a4a4c"
+            "047d54a0660a3c132802452c6ea27c85a1d9b128dccabf8927d3c1722a6f7b030c59d17bc86c9ada31ce6d56e87a1ff7761cd3d39e84c96f017d5633ea1a77ca"
+            "1948246d1b9edd76991230576554c87207b8bba563db1ccfe5bc26d47937d8b195cace39b68e627074cf9efeb5dbc6aff06bb051c8994170c293f38201b7e2e3")
+
+package() {
+    cd "$srcdir"
+    mkdir -p "$pkgdir/usr/bin/"
+    mkdir -p "$pkgdir/usr/lib/systemd/system/"
+    cp -f "amdgputuner" "$pkgdir/usr/bin/"
+    cp -f "amdgputop" "$pkgdir/usr/bin/"
+    cp -f "amdgputuner.service" "$pkgdir/usr/lib/systemd/system/"
+    cp -f "amdgputuner.timer" "$pkgdir/usr/lib/systemd/system/"
+}

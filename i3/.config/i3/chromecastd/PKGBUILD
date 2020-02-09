@@ -1,0 +1,21 @@
+# Maintainer: Maxr1998 <max@maxr1998.de>
+pkgname=chromecastd
+pkgver=1.0
+pkgrel=1
+pkgdesc="Chromecast media control daemon based on pychromecast"
+arch=("any")
+url="https://github.com/Maxr1998/stow-conf"
+license=('WTFPL')
+depends=("python-pychromecast-git")
+source=("chromecastd"
+        "chromecastd@.service")
+sha512sums=("59b515ce0656e3355d06d441bdcb147ef937f2a482587a87df187ce403cc8fc52fd38e5991b32250687021c444ecdc9b52d0ffc4963d50def57d7057c9d174a8"
+            "9a67e903c7ad3f67b30b40b69e0fa3a71d53e539f6c093dceb1da666d9729ec891b3ba5cdc01b683e20d8702b50b357f5156823fbacb6060cb231a23eeb12a85")
+
+package() {
+    cd "$srcdir"
+    mkdir -p "$pkgdir/usr/bin/"
+    mkdir -p "$pkgdir/usr/lib/systemd/system/"
+    cp -f "chromecastd" "$pkgdir/usr/bin/"
+    cp -f "chromecastd@.service" "$pkgdir/usr/lib/systemd/system/"
+}
