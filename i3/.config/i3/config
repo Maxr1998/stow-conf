@@ -195,9 +195,6 @@ exec --no-startup-id alternating_layouts.py
 bindsym XF86PowerOff exec --no-startup-id ~/.config/i3/utils/lock
 bindsym Mod4+l exec --no-startup-id ~/.config/i3/utils/lock
 
-# Keyboard layout setup
-exec_always --no-startup-id ~/.config/i3/utils/xinput
-
 # Media keys
 set $audio ~/.config/i3/utils/audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id $audio raise
