@@ -1,5 +1,8 @@
+amdgputuner
 anydesk
+chromecastd
 chromedriver
+corectrl
 ddccontrol
 dmenu-height
 gamemode
@@ -17,12 +20,13 @@ linux-maxr1998
 linux-maxr1998-headers
 lohit-fonts
 masterpassword-cli
-maxr1998_i3-config
+maxr1998-config
 minecraft-launcher
 mprime
 multimc5
 noto-fonts-emoji-blob
 numix-circle-icon-theme-git
+overdue
 pxz
 python-pychromecast-git
 radeontop
@@ -34,8 +38,8 @@ steam-native-pcre-fix
 ttf-font-icons
 ttf-impallari-dancing-script
 ttf-vlgothic
-tuxclocker-git
 uml_utilities
+vivaldi
 vramfs-git
 windscribe-cli
 yay
