@@ -19,7 +19,7 @@ xset dpms 0 0 1800
 xset s off
 
 # Set scaling
-xrandr | grep -q '^eDP1 connected' && xrandr --output eDP1 --dpi 110
+xrandr --dpi 110
 
 # Setup gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
