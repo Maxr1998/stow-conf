@@ -19,7 +19,12 @@ xset dpms 0 0 1800
 xset s off
 
 # Set scaling
-xrandr --dpi 110
+if [[ $(hostname) = "xps13" ]]; then
+    xrandr --dpi 110
+    export DMENU_HEIGHT=27
+else
+    export DMENU_HEIGHT=25
+fi
 
 # Setup gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
