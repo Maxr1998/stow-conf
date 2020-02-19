@@ -1,3 +1,4 @@
+alternating-layouts-git
 amdgputuner
 anydesk
 chromecastd
@@ -10,6 +11,7 @@ google-chrome
 google-musicmanager
 gputest
 hackmd-desktop
+hid_listen
 i3blocks-git
 i3lock-color-git
 indicator-kdeconnect-git
@@ -27,6 +29,7 @@ multimc5
 noto-fonts-emoji-blob
 numix-circle-icon-theme-git
 overdue
+pulseaudio-modules-bt-git
 pxz
 python-pychromecast-git
 radeontop
@@ -34,7 +37,6 @@ scrcpy
 simple-shutdown-dialog-git
 spicetify-cli
 spotify
-steam-native-pcre-fix
 ttf-font-icons
 ttf-impallari-dancing-script
 ttf-vlgothic
