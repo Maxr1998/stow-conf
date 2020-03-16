@@ -40,18 +40,18 @@ EXCLUDES_HOME=(
 EXCLUDES_OS=(
     'sh:/@/'
     'sh:/@home/'
-    'sh:/dev/**'
-    'sh:/home/**'
-    'sh:/media/**'
-    'sh:/mnt/**'
-    'sh:/proc/**'
-    'sh:/run/**'
-    'sh:/snapshots/'
-    'sh:/sys/'
+    'sh:/dev'
+    'sh:/home'
+    'sh:/media'
+    'sh:/mnt/'
+    'sh:/proc'
+    'sh:/run'
+    'sh:/snapshots'
+    'sh:/sys'
     'sh:/usr/boost/'
     'sh:/var/lib/docker/'
-    'sh:/var/log/**'
-    'sh:/var/run/**'
+    'sh:/var/log/'
+    'sh:/var/run/'
 )
 
 # Parse arguments
