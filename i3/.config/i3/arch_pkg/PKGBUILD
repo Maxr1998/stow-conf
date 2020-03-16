@@ -1,6 +1,6 @@
 # Maintainer: Maxr1998 <max@maxr1998.de>
 pkgname=maxr1998-config
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc="Maxr1998's system scripts and config"
 arch=("any")
@@ -10,7 +10,7 @@ depends=("xorg-server")
 source=("create_backup"
         "30-hid.conf"
         "i3lock@.service")
-sha512sums=("f93ad0f1d6089a91dafe6286390172a271e72d939dccf2aaf185bfe4883445bce5296190e955f17b996100cf361e20db6113202cc20db0a7cb3d171dde444afd"
+sha512sums=("6fa239968975aa8d39d2f152d4a217e00efcdb933d53ea5433ffec5fba2e7d402314f22b20b51c20c97a045c9d4c536f4b2f75e1781a8c08797a845b84a05f3c"
             "ea70f9c4399a97492efcd0920b0fffa03295257912af491f6cd75de88301d9985d5ad1f4c3496f869858e05039d22f50651330629ba4ab4902bdaa208b5529a7"
             "ef5e4c3ed739bf44220c5e0ed96672d17c51f606ce453a83633b8d3dd040d4ac80f4466dec8cdfea9be99cae1a61ba065cda2e271faf53b261cc70761a4c0874")
 
