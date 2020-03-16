@@ -42,6 +42,7 @@ EXCLUDES_HOME=(
     "sh:$HOME/Apps/go/src/*golang.org/"
     "sh:$HOME/Apps/go/src/github.com/"
     "sh:$HOME/Apps/go/pkg/"
+    "sh:$HOME/Development/**/.env/"
     "sh:$HOME/Development/Android/**/.gradle/"
     "sh:$HOME/Development/Android/**/build/"
     "sh:$HOME/Development/sdk/system-images/"
