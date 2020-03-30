@@ -54,11 +54,13 @@ fzf
 gawk
 gcc
 gcc-libs
+gcolor2
 gdm
 gettext
 gimp
 git
 glade
+glances
 glibc
 gnome-common
 gnome-disk-utility
@@ -82,6 +84,7 @@ gulp
 gvfs-mtp
 gvim
 gzip
+hddtemp
 htop
 hub
 i3-wm
@@ -137,7 +140,6 @@ notify-osd
 noto-fonts
 ntfs-3g
 ocl-icd
-okular
 openbsd-netcat
 opencl-headers
 opencl-mesa
@@ -159,6 +161,7 @@ perl-image-exiftool
 picom
 pkgconf
 pkgstats
+playerctl
 polkit-gnome
 postgresql-libs
 procps-ng
@@ -176,6 +179,7 @@ reflector
 reiserfsprogs
 rsync
 rtv
+rust
 s-nail
 screen
 seahorse
@@ -198,6 +202,9 @@ tcpdump
 teamspeak3
 terminus-font
 texinfo
+texlive-core
+texlive-fontsextra
+texlive-latexextra
 thefuck
 time
 tmux
