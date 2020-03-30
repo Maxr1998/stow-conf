@@ -3,12 +3,15 @@ function bt_status
     return (bluetoothctl show | awk '/Powered: /{ exit $2 == "no"}')
 end
 
-if test "$BLOCK_BUTTON" = "1"
-    if bt_status
-        bluetoothctl power off > /dev/null
-    else
-        bluetoothctl power on > /dev/null
-    end
+switch $BLOCK_BUTTON
+    case 1
+        if bt_status
+            bluetoothctl power off > /dev/null
+        else
+            bluetoothctl power on > /dev/null
+        end
+    case 3
+        i3-sensible-terminal -- bluetoothctl
 end
 
 echo -n "BT: "
