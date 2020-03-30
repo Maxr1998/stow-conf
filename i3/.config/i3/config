@@ -227,3 +227,4 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Pavucontrol"] resize set 1280 800
 for_window [class="^jetbrains-studio"][window_type=dialog] focus # Android studio workaround
 for_window [title="^Steam Guard"] floating enable
+for_window [title="Microsoft Teams-Benachrichtigung"] floating enable
