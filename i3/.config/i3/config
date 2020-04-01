@@ -213,18 +213,37 @@ bindsym XF86MonBrightnessDown exec --no-startup-id notify-send -i "weather-clear
 # Screenshot
 bindsym Control+Print exec --no-startup-id flameshot gui
 
-# Setup workspace output
-workspace 10 output DP2
+# Setup workspace outputs
+set $secondary_output DisplayPort-1
+workspace  8 output $secondary_output
+workspace  9 output $secondary_output
+workspace 10 output $secondary_output
 
-# Start with ws 1 focused, make sure ws 10 is on DP-2
+# Setup default startup layout - workspace 1 focused, workspace 10 right
 exec --no-startup-id i3-msg workspace 10, workspace number 1
 
-# Window rules
+# WINDOW CUSTOMISATIONS
+
+# Floating window rules
 floating_minimum_size 360 x 200
 floating_maximum_size 1800 x 1000
 
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Pavucontrol"] resize set 1280 800
-for_window [class="^jetbrains-studio"][window_type=dialog] focus # Android studio workaround
+# Dialog fixes (force floating)
 for_window [title="^Steam Guard"] floating enable
 for_window [title="Microsoft Teams-Benachrichtigung"] floating enable
+
+# Force Pavucontrol as dialog
+for_window [class="^Pavucontrol$"] floating enable
+for_window [class="^Pavucontrol$"] resize set 1280 800
+
+# JetBrains IDE tweaks
+for_window [class="^jetbrains" title="^Commit Changes$"] resize set 1000 680
+for_window [class="^jetbrains" title="^Commit Changes$"] move position center
+for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] resize set 1800 1000
+for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] move position center
+
+# Window workspace assignments
+assign [class="^Vivaldi-stable$"] → workspace 2
+# Normally one would use assign here, but Spotify is special…
+for_window [class="^Spotify$"] move container to workspace 9
+assign [class="^discord$"] → workspace 10
