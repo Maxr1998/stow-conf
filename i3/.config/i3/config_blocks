@@ -1,8 +1,8 @@
 interval=10
 color=#ffffff
 
-[spotify]
-command=$SCRIPT_DIR/spotify
+[media]
+command=$SCRIPT_DIR/media
 
 [chromecast]
 command=$SCRIPT_DIR/chromecast
