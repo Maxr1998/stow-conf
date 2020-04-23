@@ -201,8 +201,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $audio raise
 bindsym XF86AudioLowerVolume exec --no-startup-id $audio lower
 bindsym XF86AudioMute exec --no-startup-id $audio mute
 
-bindsym XF86AudioPlay exec playerctl --player=playerctld play
-bindsym XF86AudioPause exec playerctl --player=playerctld pause
+#bindsym XF86AudioPlay exec playerctl --player=playerctld play
+#bindsym XF86AudioPause exec playerctl --player=playerctld pause
 bindsym XF86AudioNext exec playerctl --player=playerctld next
 bindsym XF86AudioPrev exec playerctl --player=playerctld previous
 
@@ -214,7 +214,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id notify-send -i "weather-clear
 bindsym Control+Print exec --no-startup-id flameshot gui
 
 # Setup workspace outputs
+set $primary_output DisplayPort-0
 set $secondary_output DisplayPort-1
+workspace  1 output $primary_output
+workspace  2 output $primary_output
 workspace  8 output $secondary_output
 workspace  9 output $secondary_output
 workspace 10 output $secondary_output
