@@ -48,6 +48,7 @@ colorecho "Setting up directories"
 mkdir -p ~/.config/fish/
 mkdir -p ~/.vim/ftdetect/
 mkdir -p ~/.config/Code\ -\ OSS/User/
+mkdir -p ~/.config/jftui/
 
 colorecho "Checking for Vundle"
 if not test -d ~/.vim/bundle/Vundle.vim
