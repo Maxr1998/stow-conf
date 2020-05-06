@@ -18,13 +18,17 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'tomasr/molokai'                 " Original Molokai
 Plugin 'flazz/vim-colorschemes'          " More color schemes
 Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
-Plugin 'tpope/vim-fugitive'
-Plugin 'Yggdroot/indentLine'             " Leading spaces
+Plugin 'Yggdroot/indentLine'             " Mark leading spaces
 Plugin 'PeterRincker/vim-argumentative'  " Argument magic
-Plugin 'wakatime/vim-wakatime'           " Time tracking
-Plugin 'godlygeek/tabular'               " Markdown support
-Plugin 'ycm-core/YouCompleteMe'          " Auto-complete
+Plugin 'tpope/vim-fugitive'              " git integration
+if has("python")
+    Plugin 'ycm-core/YouCompleteMe'      " Auto-complete
+    Plugin 'Shougo/defx.nvim'            " File browser
+endif
+Plugin 'junegunn/goyo.vim'               " Writing mode
 Plugin 'lervag/vimtex'                   " TeX support
+Plugin 'godlygeek/tabular'               " Markdown support
+Plugin 'wakatime/vim-wakatime'           " Time tracking
 call vundle#end()
 filetype plugin indent on
 
