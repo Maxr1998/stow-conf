@@ -21,7 +21,7 @@ Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
 Plugin 'Yggdroot/indentLine'             " Mark leading spaces
 Plugin 'PeterRincker/vim-argumentative'  " Argument magic
 Plugin 'tpope/vim-fugitive'              " git integration
-if has("python")
+if has("python3")
     Plugin 'ycm-core/YouCompleteMe'      " Auto-complete
     Plugin 'Shougo/defx.nvim'            " File browser
 endif
