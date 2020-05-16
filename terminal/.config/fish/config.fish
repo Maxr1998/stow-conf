@@ -11,8 +11,8 @@ set -gx BAT_PAGER ""
 # Environment
 set -gx PATH $HOME/.local/bin $PATH
 
-set -gx ANDROID_HOME $HOME/Development/sdk/
-set -gx NDK_ROOT $HOME/Development/ndk/current/
+set -gx ANDROID_SDK_ROOT $HOME/Development/sdk/
+set -gx NDK $HOME/Development/sdk/ndk-bundle/
 set -gx ANDROID_HVPROTO ddm
 
 set -gx GOPATH $HOME/Apps/go/
