@@ -250,6 +250,10 @@ for_window [class="^jetbrains" title="^Commit Changes$"] move position center
 for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] resize set 1800 1000
 for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] move position center
 
+# Scrcpy
+for_window [class="^scrcpy$"] floating enable
+for_window [class="^scrcpy$"] resize set 404 800
+
 # Window workspace assignments
 assign [class="^Vivaldi-stable$"] → workspace 2
 # Normally one would use assign here, but Spotify is special…
