@@ -189,7 +189,7 @@ bindsym Mod4+p exec --no-startup-id ~/.config/i3/utils/reload_xrandr
 exec --no-startup-id ~/.config/i3/utils/reload_xrandr
 
 # Start alternating layouts script
-exec --no-startup-id alternating_layouts.py
+exec_always --no-startup-id alternating_layouts.py
 
 # Power key/lock setup
 bindsym XF86PowerOff exec --no-startup-id ~/.config/i3/utils/lock
