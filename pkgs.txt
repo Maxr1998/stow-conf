@@ -84,7 +84,6 @@ gulp
 gvfs-mtp
 gvim
 gzip
-hddtemp
 htop
 hub
 i3-wm
