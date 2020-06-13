@@ -44,6 +44,7 @@ set shiftwidth=4 " Indent width for spaces
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
+autocmd FileType tex  setlocal linebreak
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
