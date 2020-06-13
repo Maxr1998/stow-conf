@@ -65,6 +65,13 @@ let g:indentLine_leadingSpaceChar = '.'
 " vim-markdown
 let g:vim_markdown_conceal = 0
 
+" Goyo
+function! s:goyo_leave()
+    highlight Normal guibg=black
+endfunction
+
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " GVIM CONFIG
 if has("gui_running")
     set guifont=DankMono\ 13
