@@ -250,6 +250,7 @@ for_window [class="^Pavucontrol$"] resize set 1280 800
 # JetBrains IDE tweaks
 for_window [class="^jetbrains" title="^Commit Changes$"] resize set 1000 680
 for_window [class="^jetbrains" title="^Commit Changes$"] move position center
+for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] floating enable
 for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] resize set 1800 1000
 for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] move position center
 
@@ -259,6 +260,7 @@ for_window [class="^scrcpy$"] resize set 404 800
 
 # Window workspace assignments
 assign [class="^Vivaldi-stable$"] → workspace 2
+for_window [class="^Vivaldi-stable$" title="^Jellyfin - Vivaldi$"] move container to workspace 9
 # Normally one would use assign here, but Spotify is special…
 for_window [class="^Spotify$"] move container to workspace 9
 assign [class="^discord$"] → workspace 10
