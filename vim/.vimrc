@@ -66,6 +66,8 @@ let g:indentLine_leadingSpaceChar = '.'
 let g:vim_markdown_conceal = 0
 
 " Goyo
+autocmd FileType tex Goyo
+
 function! s:goyo_leave()
     highlight Normal guibg=black
 endfunction
