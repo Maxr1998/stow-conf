@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 set DEVICE_NAME "AT Translated Set 2 keyboard"
+set DEFAULT_COLOR "#ffffff"
+set MUTED_COLOR "#a0a0a0"
 
 if not xinput list-props "$DEVICE_NAME" > /dev/null ^ /dev/null
     exit 0
@@ -20,8 +22,10 @@ if test "$BLOCK_BUTTON" = "1"
     end
 end
 
+echo "⌨"
+echo "⌨"
 if keyboard_state
-    echo "1"
+    echo "$DEFAULT_COLOR"
 else
-    echo "0"
+    echo "$MUTED_COLOR"
 end
