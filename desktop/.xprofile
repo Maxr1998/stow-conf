@@ -20,7 +20,10 @@ xset s off
 
 # Set scaling
 if [[ $(hostname) = "xps13" ]]; then
-    xrandr --dpi 110
+    xrandr --dpi 166
+    export DMENU_HEIGHT=27
+elif [[ $(hostname) = "GLaDOS" ]]; then
+    xrandr --dpi 94
     export DMENU_HEIGHT=27
 else
     export DMENU_HEIGHT=25
