@@ -36,3 +36,11 @@ export SSH_AUTH_SOCK
 # Set wallpaper
 $HOME/.fehbg
 
+# Setup IME
+if pacman -Q fcitx; then
+    export GTK_IM_MODULE=fcitx
+    export QT_IM_MODULE=fcitx
+    export XMODIFIERS=@im=fcitx
+
+    fcitx &
+fi
