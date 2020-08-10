@@ -158,7 +158,7 @@ rm $EXCLUDE_FILE
 
 info "Pruning repository"
 
-# Use the `prune` subcommand to maintain 2 daily, 3 weekly and 4 monthly
+# Use the `prune` subcommand to maintain 4 daily, 3 weekly, 6 monthly and 2 yearly
 # archives of THIS machine. The '{hostname}-' prefix is very important to
 # limit prune's operation to this machine's archives and not apply to
 # other machines' archives also:
@@ -167,9 +167,10 @@ borg prune                                                                     \
     --list                                                                     \
     --prefix '{hostname}-'                                                     \
     --show-rc                                                                  \
-    --keep-daily    2                                                          \
+    --keep-daily    4                                                          \
     --keep-weekly   3                                                          \
-    --keep-monthly  4                                                          \
+    --keep-monthly  6                                                          \
+    --keep-yearly   2
 
 prune_exit=$?
 
