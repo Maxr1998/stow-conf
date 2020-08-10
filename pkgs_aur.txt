@@ -10,13 +10,14 @@ fahcontrol
 fahviewer
 foldingathome-noroot
 gamemode
-github-cli
 google-chrome
 gputest
 gti
 hackmd-desktop
+hid-nintendo-dkms
 hid_listen
 i3blocks-git
+i3ipc-python-git
 i3lock-color-git
 indicator-kdeconnect-git
 j4-dmenu-desktop
@@ -56,7 +57,7 @@ spotify
 spotify-tui
 ttf-font-icons
 ttf-impallari-dancing-script
-ttf-vlgothic
+ttf-mplus
 ttf-zalgo
 uml_utilities
 vivaldi

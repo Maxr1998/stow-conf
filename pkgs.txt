@@ -11,7 +11,7 @@ baobab
 base
 bash
 bat
-bind-tools
+bind
 binutils
 binwalk
 bison
@@ -41,10 +41,15 @@ docker
 docker-compose
 dos2unix
 e2fsprogs
+element-desktop
 eog
 evince
 f2fs-tools
 fakeroot
+fcitx
+fcitx-configtool
+fcitx-mozc
+fcitx-qt5
 feh
 file
 file-roller
@@ -62,6 +67,7 @@ gdm
 gettext
 gimp
 git
+github-cli
 glances
 glibc
 gnome-common
@@ -86,6 +92,7 @@ gulp
 gvfs-mtp
 gvim
 gzip
+hdparm
 htop
 hub
 hunspell-de
@@ -182,10 +189,10 @@ python-sphinx
 python-tabulate
 python2-twisted
 qemu
+qt5ct
 refind
 reflector
 reiserfsprogs
-riot-desktop
 rsync
 rtv
 rust
@@ -228,6 +235,7 @@ ttf-roboto
 ufw
 usbutils
 util-linux
+valgrind
 vi
 vulkan-radeon
 wget
