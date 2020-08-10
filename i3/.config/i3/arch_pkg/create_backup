@@ -145,12 +145,14 @@ PARAMS=(
     $TARGET
 )
 
-# Start backup
 if [ $BACKUP_OS == true ]; then
-    sudo BORG_REPO="$BORG_REPO" BORG_RSH="$BORG_RSH" borg ${PARAMS[@]}
+    BORG_CMD="sudo BORG_REPO='$BORG_REPO' BORG_RSH='$BORG_RSH' borg"
 else
-    borg ${PARAMS[@]}
+    BORG_CMD='borg'
 fi
+
+# Start backup
+eval $BORG_CMD ${PARAMS[@]}
 
 backup_exit=$?
 
@@ -163,7 +165,7 @@ info "Pruning repository"
 # limit prune's operation to this machine's archives and not apply to
 # other machines' archives also:
 
-borg prune                                                                     \
+eval $BORG_CMD prune                                                           \
     --list                                                                     \
     --prefix '{hostname}-'                                                     \
     --show-rc                                                                  \
