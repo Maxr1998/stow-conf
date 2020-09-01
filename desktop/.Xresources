@@ -1,0 +1,9 @@
+#if WIDTH == 3840
+    Xft.dpi: 160
+    i3wm.dialog.medium.width: 2560
+    i3wm.dialog.medium.height: 1600
+    i3wm.dialog.large.width: 3600
+    i3wm.dialog.large.height: 2000
+    i3wm.dialog.emulator.width: 600
+    i3wm.dialog.emulator.height: 1195
+#endif
