@@ -25,9 +25,13 @@ if [[ $(hostname) = "xps13" ]]; then
 elif [[ $(hostname) = "GLaDOS" ]]; then
     xrandr --dpi 160
     export DMENU_HEIGHT=25
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.5
 elif [[ $(hostname) = "chell" ]]; then
     xrandr --dpi 160
     export DMENU_HEIGHT=26
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.5
     #xrandr --dpi 94
     #export DMENU_HEIGHT=24
 else

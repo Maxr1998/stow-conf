@@ -1,5 +1,11 @@
 #if WIDTH == 3840
     Xft.dpi: 160
+    Xft.rgba: rgb
+    Xft.lcdfilter: lcddefault
+    Xft.antialias: 1
+    Xft.hinting: 1
+    Xft.hintstyle: hintfull
+    Xft.autohint: 0
     i3wm.dialog.medium.width: 2560
     i3wm.dialog.medium.height: 1600
     i3wm.dialog.large.width: 3600
