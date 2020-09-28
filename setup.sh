@@ -70,3 +70,6 @@ else
     end
 end
 
+colorecho "Patching GDM Xsession"
+sudo sed -i 's/xrdb -nocpp -merge "$userresources"/xrdb -merge "$userresources"/' /etc/gdm/Xsession
+

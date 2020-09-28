@@ -4,7 +4,7 @@ Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.autohint: 0
 
-#if WIDTH == 3840
+#ifdef SRVR_GLaDOS
     Xft.dpi: 160
     Xft.hintstyle: hintfull
     i3wm.dialog.medium.width: 2560

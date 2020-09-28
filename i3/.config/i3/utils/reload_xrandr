@@ -1,9 +1,3 @@
 #!/bin/sh
-# GLaDOS Tear-free rendering
-xrandr | grep -q '^DisplayPort-0 connected' && xrandr --output DisplayPort-0 --set TearFree on
-
 # External screen xps13
 xrandr | grep -q '^DP1 connected' && xrandr --output DP1 --auto --left-of eDP1 || xrandr --auto
-
-# Primary screen chell
-xrandr | grep -q '^HDMI-A-0 connected' && xrandr --output HDMI-A-0 --primary
