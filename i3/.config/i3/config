@@ -8,12 +8,12 @@ set $mod Mod1
 set $mode_resize "Fenster anpassen"
 set $bar_background #000000
 
-set_from_resource $dialog_width_medium i3wm.dialog.medium.width 2560
-set_from_resource $dialog_height_medium i3wm.dialog.medium.height 1600
-set_from_resource $dialog_width_large i3wm.dialog.large.width 3600
-set_from_resource $dialog_height_large i3wm.dialog.large.height 2000
-set_from_resource $dialog_width_emulator i3wm.dialog.emulator.width 808
-set_from_resource $dialog_height_emulator i3wm.dialog.emulator.height 1600
+set_from_resource $dialog_width_medium i3wm.dialog.medium.width 1280
+set_from_resource $dialog_height_medium i3wm.dialog.medium.height 800
+set_from_resource $dialog_width_large i3wm.dialog.large.width 1800
+set_from_resource $dialog_height_large i3wm.dialog.large.height 1000
+set_from_resource $dialog_width_emulator i3wm.dialog.emulator.width 404
+set_from_resource $dialog_height_emulator i3wm.dialog.emulator.height 800
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -248,6 +248,7 @@ for_window [title="Microsoft Teams-Benachrichtigung"] floating enable
 # Force Pavucontrol as dialog
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Pavucontrol$"] resize set $dialog_width_medium $dialog_height_medium
+for_window [class="^Pavucontrol$"] move position center
 
 # JetBrains IDE tweaks
 for_window [class="^jetbrains" title="^win0$"] floating enable
