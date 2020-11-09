@@ -28,6 +28,7 @@ endif
 Plugin 'junegunn/goyo.vim'               " Writing mode
 Plugin 'lervag/vimtex'                   " TeX support
 Plugin 'godlygeek/tabular'               " Markdown support
+Plugin 'dag/vim-fish'
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 call vundle#end()
 filetype plugin indent on
@@ -47,7 +48,7 @@ autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType tex  setlocal linebreak
 
 " Disable quote concealing in JSON files
-let g:vim_json_conceal=0
+let g:vim_json_conceal = 0
 
 " Utility macros
 let @l = "/\\80i d79|l" " sanitize \\ indention
@@ -61,6 +62,9 @@ set termguicolors
 let g:indentLine_enabled = 0
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '.'
+
+" Set vimtex flavor
+let g:tex_flavor = 'latex'
 
 " vim-markdown
 let g:vim_markdown_conceal = 0
