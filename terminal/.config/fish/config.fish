@@ -6,6 +6,7 @@ complete -c svim -w vim
 
 thefuck --alias | source
 
+set -gx PAGER most
 set -gx BAT_PAGER ""
 
 # Environment
