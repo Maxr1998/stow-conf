@@ -8,6 +8,8 @@ set $mod Mod1
 set $mode_resize "Fenster anpassen"
 set $bar_background #000000
 
+set_from_resource $dialog_width_small i3wm.dialog.small.width 480
+set_from_resource $dialog_height_small i3wm.dialog.small.height 270
 set_from_resource $dialog_width_medium i3wm.dialog.medium.width 1280
 set_from_resource $dialog_height_medium i3wm.dialog.medium.height 800
 set_from_resource $dialog_width_large i3wm.dialog.large.width 1800
@@ -249,6 +251,11 @@ for_window [title="Microsoft Teams-Benachrichtigung"] floating enable
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Pavucontrol$"] resize set $dialog_width_medium $dialog_height_medium
 for_window [class="^Pavucontrol$"] move position center
+
+# MPV PiP size when floating
+for_window [class="^mpv$"] sticky enable
+for_window [class="^mpv$" floating_from="auto"] resize set $dialog_width_small $dialog_height_small
+for_window [class="^mpv$" floating_from="auto"] move position 2850 250
 
 # JetBrains IDE tweaks
 for_window [class="^jetbrains" title="^win0$"] floating enable

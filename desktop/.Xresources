@@ -7,6 +7,8 @@ Xft.autohint: 0
 #ifdef SRVR_GLaDOS
     Xft.dpi: 160
     Xft.hintstyle: hintfull
+    i3wm.dialog.small.width: 960
+    i3wm.dialog.small.height: 540
     i3wm.dialog.medium.width: 2560
     i3wm.dialog.medium.height: 1600
     i3wm.dialog.large.width: 3600
