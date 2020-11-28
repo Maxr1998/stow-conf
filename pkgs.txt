@@ -1,3 +1,4 @@
+adobe-source-han-sans-kr-fonts
 android-tools
 android-udev
 autoconf
@@ -18,7 +19,6 @@ borg
 breeze
 bzip2
 calc
-calf
 clang
 clipmenu
 clipnotify
@@ -27,6 +27,7 @@ code
 cool-retro-term
 coreutils
 cpupower
+crda
 cryptsetup
 device-mapper
 devtools
@@ -35,7 +36,6 @@ dfu-util
 dhcpcd
 diffutils
 discord
-dmidecode
 docker
 docker-compose
 dos2unix
@@ -58,6 +58,7 @@ fish
 flameshot
 flex
 fzf
+gamemode
 gawk
 gcc
 gcc-libs
@@ -105,7 +106,7 @@ iotop
 ipcalc
 iproute2
 iputils
-jdk11-openjdk
+jdk-openjdk
 jdk8-openjdk
 jfsutils
 jq
@@ -117,6 +118,7 @@ libgnome-keyring
 libmtp
 libsodium
 libtool
+libva-mesa-driver
 libva-utils
 licenses
 linux
@@ -133,10 +135,13 @@ man-pages
 mariadb-clients
 materia-gtk-theme
 mdadm
+mediainfo
 mesa
 meson
+mono
 moreutils
 mosh
+most
 mpv
 namcap
 nano
@@ -150,14 +155,14 @@ nmap
 nodejs
 noto-fonts
 ntfs-3g
+nvme-cli
 ocl-icd
 openbsd-netcat
-openjdk11-doc
-openjdk11-src
+openjdk-doc
+openjdk-src
 openjdk8-doc
 openjdk8-src
 openmp
-openmpi
 pacman
 pacman-contrib
 pacutils
@@ -177,6 +182,8 @@ procps-ng
 psmisc
 python-async_generator
 python-llfuse
+python-markdown
+python-mutagen
 python-pip
 python-sphinx
 python-tabulate
@@ -184,6 +191,7 @@ python2-twisted
 qemu
 qt5ct
 reflector
+repo
 rsync
 rtv
 rust
@@ -214,17 +222,22 @@ tmux
 traceroute
 transmission-gtk
 tree
+ttf-croscore
 ttf-dejavu
+ttf-jetbrains-mono
 ttf-roboto
 ufw
 usbutils
 util-linux
 valgrind
 vi
+vivaldi
 wget
 which
 whois
 wine-staging
+wireguard-dkms
+wireguard-tools
 wmctrl
 xclip
 xdg-user-dirs
