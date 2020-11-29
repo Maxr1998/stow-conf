@@ -192,6 +192,7 @@ qemu
 qt5ct
 reflector
 repo
+rofi
 rsync
 rtv
 rust

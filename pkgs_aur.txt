@@ -6,7 +6,6 @@ chromedriver
 corectrl
 ddccontrol
 discordrp-mpris-git
-dmenu-rs
 fahcontrol
 fahviewer
 foldingathome-noroot
