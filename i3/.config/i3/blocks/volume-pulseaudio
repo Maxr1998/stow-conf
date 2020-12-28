@@ -25,11 +25,11 @@ function slog {
 }
 
 case "$BLOCK_BUTTON" in
-    1) $VOLUME_SCRIPT -mn ;; 
+    1) $VOLUME_SCRIPT mute ;;
     2) ;;
     3) $SCRIPT_DIR/../utils/audio_settings > /dev/null ;;
-    4) $VOLUME_SCRIPT -i 5 ;;
-    5) $VOLUME_SCRIPT -d 5 ;;
+    4) $VOLUME_SCRIPT up 5 ;;
+    5) $VOLUME_SCRIPT down 5 ;;
 esac
 
 function print_format {
