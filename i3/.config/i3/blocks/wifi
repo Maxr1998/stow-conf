@@ -1,7 +1,7 @@
 #!/bin/bash
-cat /proc/net/wireless | awk -v ssid="$(iwgetid -r)" '/wlan0/ {
+cat /proc/net/wireless | awk -v ssid="$(iwgetid -r)" -v freq="$(iwlist wlan0 frequency | awk -F '[: ]+' '/Current Frequency:/{print $4}')" '/wlan0/ {
     level = int($4)
-    text = "WLAN: "level" dBm in "ssid
+    text = ssid" ("freq" GHz, "level" dBm)"
     print text
     print text
     print (level >= -60) ? "#00ff00" : (level >= -80) ? "#ffff00" : "#ff0000"
