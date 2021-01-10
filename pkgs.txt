@@ -237,7 +237,6 @@ wget
 which
 whois
 wine-staging
-wireguard-dkms
 wireguard-tools
 wmctrl
 xclip
