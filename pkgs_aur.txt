@@ -12,7 +12,6 @@ foldingathome-noroot
 gputest
 gti
 hackmd-desktop
-hid-nintendo-dkms
 hid_listen
 i3blocks-git
 i3ipc-python-git
@@ -24,8 +23,6 @@ jdk-adoptopenjdk
 jftui-git
 kernel-modules-hook
 lib32-gperftools
-libc++
-libc++abi
 libva1
 linux-maxr1998
 linux-maxr1998-headers
@@ -48,11 +45,9 @@ okular-no-purpose
 opencl-amd
 overdue
 pandoc-bin
-pulseaudio-modules-bt-git
 pxz
 python-i3-py
 python-pychromecast-git
-radeontop
 scrcpy
 screen-desktop-bin
 simple-shutdown-dialog-git

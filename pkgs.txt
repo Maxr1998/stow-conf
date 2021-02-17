@@ -33,7 +33,6 @@ device-mapper
 devtools
 dfu-programmer
 dfu-util
-dhcpcd
 diffutils
 discord
 docker
@@ -67,6 +66,7 @@ gdm
 gettext
 gimp
 git
+git-lfs
 github-cli
 glances
 glibc
@@ -114,6 +114,8 @@ kdeconnect
 less
 lib32-mesa
 lib32-vulkan-icd-loader
+libc++
+libc++abi
 libgnome-keyring
 libmtp
 libsodium
@@ -124,6 +126,7 @@ licenses
 linux
 linux-headers
 logrotate
+lostfiles
 lshw
 lsof
 lutris
@@ -138,19 +141,16 @@ mdadm
 mediainfo
 mesa
 meson
+mkvtoolnix-cli
 mono
 moreutils
 mosh
-most
 mpv
 namcap
 nano
 nautilus
 neofetch
 netctl
-network-manager-applet
-networkmanager
-networkmanager-openvpn
 nmap
 nodejs
 noto-fonts
@@ -173,6 +173,8 @@ pdfarranger
 perl
 perl-image-exiftool
 picom
+pipewire-alsa
+pipewire-pulse
 pkgconf
 pkgstats
 playerctl
@@ -190,6 +192,7 @@ python-tabulate
 python2-twisted
 qemu
 qt5ct
+radeontop
 reflector
 repo
 rofi
