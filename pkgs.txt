@@ -166,6 +166,7 @@ openmp
 pacman
 pacman-contrib
 pacutils
+pamixer
 patch
 pavucontrol
 pciutils

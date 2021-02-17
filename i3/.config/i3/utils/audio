@@ -1,11 +1,6 @@
-#!/bin/bash
-
-VOLUME_PATH=~/.config/i3/i3-volume
-STATUS_CMD=i3blocks
-
+#!/bin/sh
 case "$1" in
-    raise) $VOLUME_PATH/volume up 5 -n -t $STATUS_CMD -u RTMIN+1 ;;
-    lower) $VOLUME_PATH/volume down 5 -n -t $STATUS_CMD -u RTMIN+1 ;;
-    mute)  $VOLUME_PATH/volume mute -n -t $STATUS_CMD -u RTMIN+1 ;;
+    raise) pamixer --allow-boost -i 5 ;;
+    lower) pamixer --allow-boost -d 5 ;;
+    mute) [[ $(pamixer --get-mute) = 'false' ]] && pamixer -m || pamixer -u ;;
 esac
-
