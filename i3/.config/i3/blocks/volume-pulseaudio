@@ -4,6 +4,19 @@
 ############################################################
 # Taken from vivien/i3blocks-contrib, modified by Maxr1998 #
 ############################################################
+
+AUDIO_SCRIPT=~/.config/i3/utils/audio
+
+case "$BLOCK_BUTTON" in
+    1) $AUDIO_SCRIPT mute ;;
+    2) ;;
+    3) ~/.config/i3/utils/audio_settings > /dev/null ;;
+    4) $AUDIO_SCRIPT raise ;;
+    5) $AUDIO_SCRIPT lower ;;
+esac
+
+############################################################
+
 # See  https://github.com/vivien/i3blocks-contrib/blob/master/volume-pulseaudio/volume-pulseaudio
 
 AUDIO_INTERVAL=5
@@ -18,19 +31,9 @@ USE_DESCRIPTION=0
 
 SUBSCRIBE=0
 
-VOLUME_SCRIPT=$SCRIPT_DIR/../i3-volume/volume
-
 function slog {
     >&2 echo "VOLUME-LOG: $@"
 }
-
-case "$BLOCK_BUTTON" in
-    1) $VOLUME_SCRIPT mute ;;
-    2) ;;
-    3) $SCRIPT_DIR/../utils/audio_settings > /dev/null ;;
-    4) $VOLUME_SCRIPT up 5 ;;
-    5) $VOLUME_SCRIPT down 5 ;;
-esac
 
 function print_format {
     PERCENT="%"
