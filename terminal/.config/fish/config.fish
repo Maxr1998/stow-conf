@@ -9,7 +9,7 @@ thefuck --alias | source
 set -gx BAT_PAGER ""
 
 # Environment
-set -gx PATH $HOME/.local/bin $HOME/.local/bin/dart-sass $PATH
+set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $HOME/.local/bin/dart-sass $PATH
 
 set -gx ANDROID_SDK_ROOT $HOME/Development/sdk/
 set -gx NDK $HOME/Development/sdk/ndk-bundle/
