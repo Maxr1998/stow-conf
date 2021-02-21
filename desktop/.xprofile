@@ -18,11 +18,10 @@
 xset dpms 0 0 1800
 xset s off
 
-# Set scaling
+# Setup X screen and scaling
 if [[ $(hostname) = "xps13" ]]; then
     xrandr --dpi 166
 elif [[ $(hostname) = "GLaDOS" ]]; then
-    # Setup X screen
     xrandr --dpi 160 --fb 7680x2400 --output DisplayPort-0 --primary --mode 3840x2160 --pos 0x160 --output DisplayPort-1 --mode 1920x1200 --scale 2x2 --pos 3840x0
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.5
