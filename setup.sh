@@ -36,7 +36,7 @@ if count $argv > /dev/null
         colorecho "Install manually afterwards:"
         colorecho "- https://aur.archlinux.org/package-query.git"
         colorecho "- https://aur.archlinux.org/yay.git"
-        colorecho "yay -S --needed --noconfirm discord dmenu-height google-chrome i3blocks-git i3lock-color-git j4-dmenu-desktop \\"
+        colorecho "yay -S --needed --noconfirm i3blocks-git i3lock-color-git \\ "
         colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
         echo
     end
