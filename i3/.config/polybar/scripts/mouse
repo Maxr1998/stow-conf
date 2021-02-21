@@ -1,0 +1,2 @@
+#!/bin/sh
+upower --show-info /org/freedesktop/UPower/devices/mouse_hidpp_battery_0 | awk '/percentage/{print $2}'

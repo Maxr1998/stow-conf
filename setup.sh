@@ -12,12 +12,6 @@ end
 
 set -l I3_DIR i3/.config/i3
 
-colorecho "Refreshing submodules"
-git submodule init
-git submodule update --init --recursive --remote
-git apply --check --directory=$I3_DIR/i3blocks-contrib/ $I3_DIR/battery.patch 2> /dev/null; and \
-    git apply --directory=$I3_DIR/i3blocks-contrib/ $I3_DIR/battery.patch
-
 if count $argv > /dev/null
     and test $argv[1] = "pkg"
     which pacman > /dev/null
@@ -36,7 +30,7 @@ if count $argv > /dev/null
         colorecho "Install manually afterwards:"
         colorecho "- https://aur.archlinux.org/package-query.git"
         colorecho "- https://aur.archlinux.org/yay.git"
-        colorecho "yay -S --needed --noconfirm i3blocks-git i3lock-color-git \\ "
+        colorecho "yay -S --needed --noconfirm polybar-git i3lock-color-git \\ "
         colorecho "materia-gtk-theme numix-circle-icon-theme-git numix-icon-theme-git ttf-font-icons"
         echo
     end

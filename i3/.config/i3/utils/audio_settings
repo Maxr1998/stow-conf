@@ -5,4 +5,3 @@ if test $show_pavucontrol = "false"
         i3-msg exec pavucontrol
     end
 end
-

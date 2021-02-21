@@ -16,9 +16,11 @@ Xft.autohint: 0
     i3wm.dialog.emulator.width: 600
     i3wm.dialog.emulator.height: 1195
     rofi.dpi: 160
+    polybar.height: 40
 #endif
 
 #ifdef SRVR_xps13
     Xft.dpi: 120
     rofi.dpi: 120
+    polybar.height: 28
 #endif

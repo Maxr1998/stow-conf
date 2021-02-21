@@ -1,0 +1,6 @@
+#!/bin/sh
+if bluetoothctl show | awk '/Powered: /{ exit $2 == "no"}'; then
+    echo "on"
+else
+    echo "off"
+fi

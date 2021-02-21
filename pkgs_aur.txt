@@ -13,7 +13,6 @@ gputest
 gti
 hackmd-desktop
 hid_listen
-i3blocks-git
 i3ipc-python-git
 i3lock-color-git
 indicator-kdeconnect-git
@@ -45,11 +44,13 @@ okular-no-purpose
 opencl-amd
 overdue
 pandoc-bin
+polybar-git
 pxz
 python-i3-py
 python-pychromecast-git
 scrcpy
 screen-desktop-bin
+siji
 simple-shutdown-dialog-git
 spotify
 spotify-tui

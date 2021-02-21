@@ -1,0 +1,10 @@
+#!/usr/bin/fish
+function bt_status
+    return (bluetoothctl show | awk '/Powered: /{ exit $2 == "no"}')
+end
+
+if bt_status
+    bluetoothctl power off > /dev/null
+else
+    bluetoothctl power on > /dev/null
+end

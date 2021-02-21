@@ -157,26 +157,6 @@ client.focused_inactive #333333 #212121 #fafafa
 client.unfocused #212121 #212121 #fafafa
 client.background #000000
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    position top
-    i3bar_command i3bar
-    #--transparency
-    status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks
-    tray_output primary
-
-    colors {
-        background $bar_background
-        separator $bar_background
-
-        focused_workspace #4285f4 #4285f4 #ffffff
-        active_workspace #333333 #333333 #ffffff
-        urgent_workspace #a00000 #a00000 #ffffff
-        inactive_workspace $bar_background $bar_background #ffffff
-   }
-}
-
 ### SYSTEM KEYBINDINGS/ENVIRONMENT SETUP
 
 # GNOME setup
@@ -187,6 +167,9 @@ exec --no-startup-id /usr/lib/kdeconnectd
 
 # Multi-monitor-setup
 bindsym Mod4+p exec --no-startup-id ~/.config/i3/utils/reload_xrandr
+
+# Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Setup compositor
 exec_always --no-startup-id ~/.config/picom/launch.sh
