@@ -110,7 +110,7 @@ label-urgent-padding = 2
 [module/mprisplayer]
 type = custom/script
 exec = echo "$(playerctl metadata xesam:artist) ・ $(playerctl metadata xesam:title)"
-exec-if = test $(playerctl status) != "Stopped"
+exec-if = playerctl metadata xesam:artist
 interval = 3
 
 format-prefix = " "
