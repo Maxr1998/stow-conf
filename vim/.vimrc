@@ -45,7 +45,10 @@ set shiftwidth=4 " Indent width for spaces
 autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
-autocmd FileType tex  setlocal linebreak
+
+" TeX customisations
+autocmd FileType tex setlocal linebreak
+autocmd FileType tex setlocal conceallevel=0
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal = 0
@@ -60,6 +63,7 @@ set termguicolors
 
 " indentLine
 let g:indentLine_enabled = 0
+let g:indentLine_setConceal = 0
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '.'
 
