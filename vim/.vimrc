@@ -70,10 +70,10 @@ let g:tex_flavor = 'latex'
 let g:vim_markdown_conceal = 0
 
 " Goyo
-autocmd FileType tex Goyo
+autocmd FileType tex Goyo 120x95%
 
 function! s:goyo_leave()
-    highlight Normal guibg=black
+    quit
 endfunction
 
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
