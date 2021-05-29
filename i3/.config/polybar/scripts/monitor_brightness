@@ -1,0 +1,67 @@
+#!/bin/bash
+
+DEVICE=""
+CACHE_FILE="/tmp/monitor_i2c_path"
+LEVELS=( 10 16 24 32 42 50 64 80 100 )
+
+# Check whether monitor is on before querying any info
+xset q | grep "Monitor is On" > /dev/null || exit 0
+
+probe_device () {
+    DEVICE=$(ddccontrol -p 2> /dev/null | awk '/^ - Device: /{print substr($0, 16)}')
+    if ! check_device; then
+        return 1
+    fi
+    echo -n "$DEVICE" > $CACHE_FILE
+    return 0
+}
+
+read_cache () {
+    [ -f "$CACHE_FILE" ] || return 1
+    DEVICE=$(cat $CACHE_FILE)
+    check_device
+}
+
+check_device () {
+    [ -n "$DEVICE" -a -c "$DEVICE" ]
+}
+
+get_brightness () {
+    ddccontrol dev:$DEVICE -r 0x10 2> /dev/null | grep 'Control 0x10:' |  sed 's#Control 0x10: +/\([0-9]\+\)/.*#\1#'
+}
+
+set_brightness () {
+    ddccontrol dev:$DEVICE -r 0x10 -w $1
+}
+
+read_cache || probe_device || exit 1
+
+BRIGHTNESS=$(get_brightness)
+
+case "$1" in
+    get)
+        echo $BRIGHTNESS
+        ;;
+    raise)
+        for i in $(seq 0 8); do
+            LEVEL=${LEVELS[$i]}
+            if [ $LEVEL -gt $BRIGHTNESS ]; then
+                set_brightness $LEVEL
+                exit 0
+            fi
+        done
+        ;;
+    lower)
+        for i in $(seq 8 -1 0); do
+            LEVEL=${LEVELS[$i]}
+            if [ $LEVEL -lt $BRIGHTNESS ]; then
+                set_brightness $LEVEL
+                exit 0
+            fi
+        done
+        ;;
+    *)
+        echo "Illegal argument"
+        exit 1
+        ;;
+esac

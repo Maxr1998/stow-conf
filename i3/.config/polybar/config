@@ -60,7 +60,7 @@ font-4 = Source Han Sans KR:size=10;2
 
 modules-left = i3
 modules-center = mprisplayer
-modules-right = wlan eth bluetooth pulseaudio cpufreq cpu temperature memory mousebattery battery updates date
+modules-right = wlan eth bluetooth pulseaudio monitorbrightness cpufreq cpu temperature memory mousebattery battery updates date
 
 tray-position = right
 tray-padding = 2
@@ -195,6 +195,20 @@ label-muted-foreground = #666
 
 format-volume-underline = ${colors.olive}
 format-muted-underline = ${colors.gray}
+
+[module/monitorbrightness]
+type = custom/script
+exec = ~/.config/polybar/scripts/monitor_brightness get
+interval = 60
+
+format-prefix = " "
+format = <label>
+label = %output%%
+
+format-underline = ${colors.yellow}
+
+scroll-up = ~/.config/polybar/scripts/monitor_brightness raise
+scroll-down = ~/.config/polybar/scripts/monitor_brightness lower
 
 [module/cpufreq]
 type = custom/script
