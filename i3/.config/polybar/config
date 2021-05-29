@@ -109,8 +109,8 @@ label-urgent-padding = 2
 
 [module/mprisplayer]
 type = custom/script
-exec = echo "$(playerctl metadata xesam:artist) ・ $(playerctl metadata xesam:title)"
-exec-if = playerctl metadata xesam:artist
+exec = playerctl metadata --format "{{xesam:artist}} ・ {{xesam:title}}"
+exec-if = playerctl metadata xesam:title
 interval = 3
 
 format-prefix = " "
