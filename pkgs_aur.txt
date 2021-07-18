@@ -1,6 +1,5 @@
 alternating-layouts-git
 amdgputuner
-cachedir
 chromecastd
 chromedriver
 corectrl
@@ -19,10 +18,10 @@ indicator-kdeconnect-git
 it87-dkms-git
 j4-dmenu-desktop
 jdk-adoptopenjdk
+jellyfin-media-player
 jftui-git
 kernel-modules-hook
 lib32-gperftools
-libva1
 linux-maxr1998
 linux-maxr1998-headers
 linux-wifi-hotspot
@@ -45,12 +44,12 @@ opencl-amd
 overdue
 pandoc-bin
 polybar-git
-pxz
+pop-bin
+postman-bin
 python-i3-py
 python-pychromecast-git
 scrcpy
-screen-desktop-bin
-siji
+siji-git
 simple-shutdown-dialog-git
 spotify
 spotify-tui
@@ -59,8 +58,8 @@ ttf-impallari-dancing-script
 ttf-mplus
 ttf-zalgo
 uml_utilities
+v4l2loopback-dkms-git
 vramfs-git
-windscribe-cli
 xbanish
 xorg-font-utils
 yay

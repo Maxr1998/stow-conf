@@ -19,6 +19,7 @@ borg
 breeze
 bzip2
 calc
+checkbashisms
 clang
 clipmenu
 clipnotify
@@ -95,7 +96,7 @@ gzip
 hdparm
 htop
 hunspell-de
-hunspell-en_US
+hunspell-en_us
 i3-wm
 iftop
 imagemagick
@@ -163,6 +164,8 @@ openjdk-src
 openjdk8-doc
 openjdk8-src
 openmp
+openvpn
+optipng
 pacman
 pacman-contrib
 pacutils
@@ -190,15 +193,12 @@ python-mutagen
 python-pip
 python-sphinx
 python-tabulate
-python2-twisted
 qemu
 qt5ct
 radeontop
-reflector
 repo
 rofi
 rsync
-rtv
 rust
 s-nail
 screen
