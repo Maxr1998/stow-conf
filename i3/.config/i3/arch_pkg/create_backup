@@ -30,6 +30,7 @@ EXCLUDES_HOME=(
     "sh:$HOME/.gradle/"
     "sh:$HOME/.gradle-kotlin-dsl/"
     "sh:$HOME/.local/share/lutris/runners/"
+    "sh:$HOME/.local/share/JetBrains/Toolbox/download/"
     "sh:$HOME/.local/share/Steam/clientui/"
     "sh:$HOME/.local/share/Steam/graphics/"
     "sh:$HOME/.local/share/Steam/linux*/"
