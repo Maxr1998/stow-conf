@@ -253,7 +253,7 @@ for_window [class="^scrcpy$"] resize set $dialog_width_emulator $dialog_height_e
 
 # Window workspace assignments
 assign [class="^Vivaldi-stable$" window_type="normal"] → workspace 2
-for_window [class="^Vivaldi-stable$" title="^Jellyfin - Vivaldi$"] move container to workspace 9
+assign [class="^Jellyfin Media Player$"] → workspace 9
 # Normally one would use assign here, but Spotify is special…
 for_window [class="^Spotify$"] move container to workspace 9
 assign [class="^discord$"] → workspace 10
