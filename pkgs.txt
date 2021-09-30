@@ -1,3 +1,5 @@
+adobe-source-han-sans-cn-fonts
+adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 android-tools
 android-udev
@@ -39,6 +41,7 @@ discord
 docker
 docker-compose
 dos2unix
+dotnet-sdk
 e2fsprogs
 element-desktop
 eog
@@ -108,10 +111,11 @@ ipcalc
 iproute2
 iputils
 jdk-openjdk
-jdk8-openjdk
+jdk11-openjdk
 jfsutils
 jq
 kdeconnect
+kernel-modules-hook
 less
 lib32-mesa
 lib32-vulkan-icd-loader
@@ -161,8 +165,8 @@ ocl-icd
 openbsd-netcat
 openjdk-doc
 openjdk-src
-openjdk8-doc
-openjdk8-src
+openjdk11-doc
+openjdk11-src
 openmp
 openvpn
 optipng
@@ -188,7 +192,6 @@ procps-ng
 psmisc
 python-async_generator
 python-llfuse
-python-markdown
 python-mutagen
 python-pip
 python-sphinx
@@ -201,6 +204,7 @@ rofi
 rsync
 rust
 s-nail
+samba
 screen
 seahorse
 sed
@@ -222,6 +226,7 @@ tcpdump
 teamspeak3
 terminus-font
 thefuck
+tidy
 time
 tmux
 traceroute
@@ -242,6 +247,8 @@ which
 whois
 wine-staging
 wireguard-tools
+wireplumber
+wireshark-qt
 wmctrl
 xclip
 xdg-user-dirs
