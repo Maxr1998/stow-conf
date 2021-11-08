@@ -5,7 +5,7 @@ function signapk --description 'Sign APK with personal keystore'
     end
     set FILENAME $argv[1]
     # Find apksigner from Android SDK
-    set APKSIGNER (find "$ANDROID_SDK_ROOT"build-tools/ -name apksigner | sort -r)[1]
+    set APKSIGNER (find "$ANDROID_HOME"/build-tools/ -name apksigner | sort -r)[1]
 
     # Read master password to determine keystore and key password
     echo -n "Enter master password: "

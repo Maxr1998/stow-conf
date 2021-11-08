@@ -11,8 +11,9 @@ set -gx BAT_PAGER ""
 # Environment
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $HOME/.local/bin/dart-sass $PATH
 
-set -gx ANDROID_SDK_ROOT $HOME/Development/sdk/
-set -gx NDK $HOME/Development/sdk/ndk-bundle/
+set -gx ANDROID_HOME $HOME/Development/sdk
+set -gx NDK_BUNDLE $ANDROID_HOME/ndk-bundle
+set -gx NDK_ROOT $ANDROID_HOME/ndk/21.4.7075529
 set -gx ANDROID_HVPROTO ddm
 
 set -gx GOPATH $HOME/Apps/go/
