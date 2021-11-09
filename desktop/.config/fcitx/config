@@ -48,7 +48,7 @@ SwitchKey=Disabled
 # ALT_SHIFT
 # CTRL_SUPER
 # ALT_SUPER
-IMSwitchHotkey=CTRL_SUPER
+IMSwitchHotkey=ALT_SUPER
 # Konfiguration erneut laden
 #ReloadConfig=CTRL_5
 # Tastenwiederholung/Sekunde
@@ -62,9 +62,9 @@ IMSwitchHotkey=CTRL_SUPER
 # Wechsel zum Modus Vollbreite Interpunktion
 #PuncSwitchKey=CTRL_.
 # Taste vorherige Kandidaten
-#PrevPageKey=- UP
+PrevPageKey=
 # Taste für weitere Kanditaten
-#NextPageKey== DOWN
+NextPageKey=
 # Zweiten und dritten Kandidaten auswählen
 #SecondThirdCandWordKey=
 # Konfiguration und Eingabeverlauf sichern
