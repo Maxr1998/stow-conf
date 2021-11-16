@@ -109,17 +109,17 @@ label-urgent-padding = 2
 
 [module/mprisplayer]
 type = custom/script
-exec = playerctl metadata --format "{{xesam:artist}} ・ {{xesam:title}}"
-exec-if = playerctl metadata xesam:title
+exec = playerctl -i "chromium" metadata --format "{{xesam:artist}} ・ {{xesam:title}}"
+exec-if = playerctl -i "chromium" metadata xesam:title
 interval = 3
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #1db954
 
-click-left = playerctl play-pause &
-double-click-left = playerctl next &
-double-click-right = playerctl previous &
+click-left = playerctl -i "chromium" play-pause
+double-click-left = playerctl -i "chromium" next
+double-click-right = playerctl -i "chromium" previous
 
 [module/wlan]
 type = internal/network
