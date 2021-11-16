@@ -51,6 +51,7 @@ f2fs-tools
 fakeroot
 fcitx
 fcitx-configtool
+fcitx-hangul
 fcitx-mozc
 fcitx-qt5
 feh
@@ -71,6 +72,7 @@ gdm
 gettext
 gimp
 git
+git-absorb
 git-lfs
 github-cli
 glances
@@ -117,6 +119,7 @@ jfsutils
 jq
 kdeconnect
 kernel-modules-hook
+kicad
 less
 lib32-mesa
 lib32-vulkan-icd-loader
@@ -198,6 +201,7 @@ python-pip
 python-sphinx
 python-tabulate
 qemu
+qmk
 qt5ct
 radeontop
 repo
@@ -265,5 +269,5 @@ xorg-xwininfo
 xournalpp
 xpra
 yarn
-youtube-dl
+yt-dlp
 zip
