@@ -32,6 +32,7 @@ coreutils
 cpupower
 crda
 cryptsetup
+ddcutil
 device-mapper
 devtools
 dfu-programmer

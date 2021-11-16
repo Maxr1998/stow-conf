@@ -3,7 +3,6 @@ amdgputuner
 chromecastd
 chromedriver
 corectrl
-ddccontrol
 discordrp-mpris-git
 drawio-desktop
 git-absorb
