@@ -1,8 +1,9 @@
 configuration {
 	font: "Dank Mono 14";
-	theme: "Monokai";
 	case-sensitive: false;
 	terminal: "i3-sensible-terminal";
 	ssh-command: "{terminal} -- {ssh-client} {host} [-p {port}]";
 	run-shell-command: "{terminal} -- {cmd}";
 }
+
+@theme "Monokai"
