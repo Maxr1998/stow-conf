@@ -262,8 +262,9 @@ format-underline = ${colors.orange}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
-full-at = 98
+adapter = AC
+poll-interval = 10
+full-at = 99
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.yellow}
