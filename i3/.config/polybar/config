@@ -36,6 +36,7 @@ warning = ${colors.yellow}
 alert = #ff5555
 
 [bar/stool]
+monitor = ${env:MONITOR:}
 dpi = ${xrdb:Xft.dpi:96}
 width = 100%
 height = ${xrdb:polybar.height:28}
