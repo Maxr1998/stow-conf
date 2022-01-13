@@ -17,14 +17,14 @@ B="00000000"
 MARGIN=80
 
 i3lock -n -t -i "$HOME/Bilder/Wallpapers/Lockscreen.png" \
-    --ringcolor=$W --separatorcolor=$B --line-uses-inside \
-    --keyhlcolor=d23c3dff --bshlcolor=d23c3dff \
-    --ringvercolor=$W --ringwrongcolor=$W \
-    --insidecolor=373445ff --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
+    --ring-color=$W --separator-color=$B --line-uses-inside \
+    --keyhl-color=d23c3dff --bshl-color=d23c3dff \
+    --ringver-color=$W --ringwrong-color=$W \
+    --inside-color=373445ff --insidever-color=fecf4dff --insidewrong-color=d23c3dff \
     --indicator --force-clock \
-    --indpos="x+$MARGIN:y+h-$MARGIN" --radius=14 --ring-width=2.5 \
-    --timepos="x+$MARGIN+24:y+h-$MARGIN+12" --time-align=1 --timecolor=$W \
-    --datestr="" --veriftext="" --wrongtext="" --noinputtext=""
+    --ind-pos="x+$MARGIN:y+h-$MARGIN" --radius=14 --ring-width=2.5 \
+    --time-pos="x+$MARGIN+24:y+h-$MARGIN+12" --time-align=1 --time-color=$W \
+    --date-str="" --verif-text="" --wrong-text="" --noinput-text=""
 
 echo "Screen unlocked"
 
