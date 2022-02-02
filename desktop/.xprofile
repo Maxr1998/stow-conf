@@ -50,6 +50,3 @@ if pacman -Q fcitx; then
 
     fcitx &
 fi
-
-# Set clipmenu launcher
-export CM_LAUNCHER=rofi
