@@ -139,7 +139,7 @@ PARAMS=(
     --stats
     --show-rc
     --compression $compression
-    --nobsdflags
+    --noflags
     --exclude-caches
     --exclude-from $EXCLUDE_FILE
     ::'{hostname}-{now}'
@@ -161,21 +161,21 @@ rm $EXCLUDE_FILE
 
 info "Pruning repository"
 
-# Use the `prune` subcommand to maintain 4 daily, 3 weekly, 6 monthly and 2 yearly
-# archives of THIS machine. The '{hostname}-' prefix is very important to
-# limit prune's operation to this machine's archives and not apply to
-# other machines' archives also:
-
+# Use the `prune` subcommand to maintain the specified amount of archives.
+# Older archives are always kept in addition to the already matched ones.
+# The '{hostname}-' prefix limits the prune's operation to this machine's archives.
 eval $BORG_CMD prune                                                           \
     --list                                                                     \
     --prefix '{hostname}-'                                                     \
     --show-rc                                                                  \
-    --keep-daily    4                                                          \
+    --keep-daily    7                                                          \
     --keep-weekly   3                                                          \
-    --keep-monthly  6                                                          \
-    --keep-yearly   2
+    --keep-monthly  5                                                          \
+    --keep-yearly   1                                                          \
 
 prune_exit=$?
+
+eval $BORG_CMD compact
 
 # use highest exit code as global exit code
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
