@@ -1,6 +1,6 @@
 # Maintainer: Maxr1998 <max@maxr1998.de>
 pkgname=maxr1998-config
-pkgver=1.4
+pkgver=1.4.0
 pkgrel=1
 pkgdesc="Maxr1998's system scripts and config"
 arch=("any")
