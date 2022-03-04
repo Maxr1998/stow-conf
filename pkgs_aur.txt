@@ -1,6 +1,7 @@
 alternating-layouts-git
 amdgputuner
 android-apktool
+anki-official-binary-bundle
 chromecastd
 chromedriver
 corectrl
@@ -10,7 +11,7 @@ freecad-appimage-git
 gti
 hackmd-desktop
 hid_listen
-httptoolkit
+httptoolkit-bin
 i3ipc-python-git
 i3lock-color-git
 indicator-kdeconnect-git
