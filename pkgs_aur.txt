@@ -12,9 +12,7 @@ gti
 hackmd-desktop
 hid_listen
 httptoolkit-bin
-i3ipc-python-git
 i3lock-color-git
-indicator-kdeconnect-git
 it87-dkms-git
 j4-dmenu-desktop
 jellyfin-media-player
@@ -44,12 +42,14 @@ pacman-cleanup-hook
 pandoc-bin
 polybar-git
 pop-bin
+prismatik-psieg-bin
+python-homeassistant-cli
 python-i3-py
 python-pychromecast-git
-scrcpy
 siji-git
 simple-shutdown-dialog-git
 slack-desktop
+solo-python
 spotify
 spotify-tui
 ttf-font-icons
@@ -57,7 +57,7 @@ ttf-impallari-dancing-script
 ttf-mplus
 ttf-zalgo
 uml_utilities
-v4l2loopback-dkms-git
+via-bin
 vramfs-git
 xbanish
 xorg-font-utils
