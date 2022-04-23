@@ -110,8 +110,7 @@ label-urgent-padding = 2
 
 [module/mprisplayer]
 type = custom/script
-exec = playerctl -i "chromium" metadata --format "{{xesam:artist}} ・ {{xesam:title}}"
-exec-if = playerctl -i "chromium" metadata xesam:title
+exec = ~/.config/polybar/scripts/mprisplayer
 interval = 3
 
 format-prefix = " "
