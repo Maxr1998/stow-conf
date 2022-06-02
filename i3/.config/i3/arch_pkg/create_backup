@@ -138,6 +138,7 @@ PARAMS=(
     --progress
     --stats
     --show-rc
+    --checkpoint-interval 300
     --compression $compression
     --noflags
     --exclude-caches
