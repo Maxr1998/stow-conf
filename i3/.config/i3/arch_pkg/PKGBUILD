@@ -1,16 +1,18 @@
 # Maintainer: Maxr1998 <max@maxr1998.de>
 pkgname=maxr1998-config
-pkgver=1.4.1
+pkgver=1.5.0
 pkgrel=1
 pkgdesc="Maxr1998's system scripts and config"
 arch=("any")
 url="https://github.com/Maxr1998/stow-conf"
 license=('WTFPL')
 depends=("xorg-server")
-source=("create_backup"
+source=("zfs-mount-home"
+        "create_backup"
         "30-hid.conf"
         "i3lock@.service")
-sha512sums=("6c87342b1f745a8cc58187f87665c791bc3d5ccd527bac043848642bced2b4458013c6cfed82914b8902d13f514ce96733126ccf13ec9353cebba9c258c3429e"
+sha512sums=("b909a7652b71957324c3b9e127f7109507ee730437f424180649177bd2968946f3bab79189ce177505cb82b7d99bd115ab3dbaabc04195ffcb9378ff374bafbb"
+            "6c87342b1f745a8cc58187f87665c791bc3d5ccd527bac043848642bced2b4458013c6cfed82914b8902d13f514ce96733126ccf13ec9353cebba9c258c3429e"
             "74f82633351cd190c57732dc2b8512b325e3e578ca3e26457bde6a029151b83fddbff96e3ee83e47ddf98765186b3f71a227fc70c85911f66f80aacbed6f93c1"
             "ef5e4c3ed739bf44220c5e0ed96672d17c51f606ce453a83633b8d3dd040d4ac80f4466dec8cdfea9be99cae1a61ba065cda2e271faf53b261cc70761a4c0874")
 
@@ -19,6 +21,7 @@ package() {
     mkdir -p "$pkgdir/usr/bin/"
     mkdir -p "$pkgdir/usr/lib/systemd/system/"
     mkdir -p "$pkgdir/etc/X11/xorg.conf.d/"
+    cp -f "zfs-mount-home" "$pkgdir/usr/bin/"
     cp -f "create_backup" "$pkgdir/usr/bin/"
     cp -f "i3lock@.service" "$pkgdir/usr/lib/systemd/system/"
     cp -f "30-hid.conf" "$pkgdir/etc/X11/xorg.conf.d/"

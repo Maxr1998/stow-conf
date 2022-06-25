@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Adapted from https://blog.trifork.com/2020/05/22/linux-homedir-encryption/
+
+set -eu
+
+# Password is given to us via stdin, save it in a variable for later
+PASS=$(cat -)
+
+# List all zfs volume that have a user set *locally*
+# (excluding subvolumes which will be handled shortly)
+zfs get custom:user -s local -o name,value -H | while read vol; do
+    volname=$(echo $vol | awk '{print $1}')
+    user=$(echo $vol | awk '{print $2}')
+
+    # Only operate on user currently logging in
+    [[ $user = $PAM_USER ]] || continue
+
+    # Unlock the volume with the provided password if necessary
+    keystatus=$(zfs get keystatus -o value -H "$volname")
+    [[ $keystatus = "available" ]] || zfs load-key "$volname" <<< "$PASS" || continue
+
+    # Mount volumes including all subvolumes using the same key
+    zfs get keystatus -r -o name,value -H "$volname" | while read subvol; do
+        subvolname=$(echo $subvol | awk '{print $1}')
+        keystatus=$(echo $subvol | awk '{print $2}')
+
+        [[ $keystatus = "available" ]] || continue # skip subvolumes with missing key
+        zfs mount "$subvolname" || true # ignore errors
+    done
+done
