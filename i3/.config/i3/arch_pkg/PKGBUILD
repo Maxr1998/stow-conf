@@ -9,10 +9,12 @@ license=('WTFPL')
 depends=("xorg-server")
 source=("zfs-mount-home"
         "create_backup"
+        "xrandr-reload"
         "30-hid.conf"
         "i3lock@.service")
 b2sums=('ae6b96f6ec505cffafdbcef4992eaefef95713a576c42f9879e836630e1986032bdd4d1a45382224d159f3718b51198a00c64aa0af718a3a78e560e0374b495e'
         'f1cd8dacc24148d386fa1122ecad6b28360fc52af34dbcf373191983c4e5680ed0185047bbba4f718088445803b98a37816ca616d23099890ea4250afb9ef1aa'
+        'ebd36d9797f20ca936e0f6fca5f5f97363e4d0a81064cbf79878e2d800488d2de0c89b50e8ea2eb279e516cb222b35b2b5cb69226ea5f0d9f53130165454e834'
         '9b8862c588086d3edc4f5ca84a843dd643a555fce39ce25dfbc9ce4a19d6a3e37e57c8df87db18d76c59285b8770847a049a45990b6c9bfe317d9141a45671a9'
         '9ec724768d3802945544981cf2cda7180151dae6c215e878f3a37d8696849b64a34cbc0f5dc354768c088a7dceacfc577ec1a693f9804f1d5debd58225509293')
 
@@ -23,6 +25,7 @@ package() {
     mkdir -p "$pkgdir/etc/X11/xorg.conf.d/"
     cp -f "zfs-mount-home" "$pkgdir/usr/bin/"
     cp -f "create_backup" "$pkgdir/usr/bin/"
+    cp -f "xrandr-reload" "$pkgdir/usr/bin/"
     cp -f "i3lock@.service" "$pkgdir/usr/lib/systemd/system/"
     cp -f "30-hid.conf" "$pkgdir/etc/X11/xorg.conf.d/"
 }
