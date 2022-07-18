@@ -49,6 +49,9 @@ EXCLUDES_HOME=(
     "sh:$HOME/Apps/go/pkg/"
     "sh:$HOME/Development/**/.gradle/"
     "sh:$HOME/Development/**/build/"
+    "sh:$HOME/Development/Linux/aur/*/pkg/"
+    "sh:$HOME/Development/Linux/aur/*/src/"
+    "sh:$HOME/Development/Linux/aur/*/*.pkg.*"
     "sh:$HOME/Development/sdk/system-images/"
     "sh:$HOME/Games/"
 )
