@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-set enabled_modules desktop i3 terminal vim vscode
+set enabled_modules desktop gtk i3 rofi terminal vim vscode xorg
 
 function colorecho 
 	# Set color to cyan
