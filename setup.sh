@@ -66,7 +66,12 @@ else
 	end
 end
 
-colorecho "Patching GDM Xsession"
-sudo sed -i 's/xrdb -nocpp -merge "$userresources"/xrdb -merge "$userresources"/' /etc/gdm/Xsession
+set gdm_xsession_default 'xrdb -nocpp -merge "$userresources"'
+set gdm_xsession_replace 'xrdb -merge "$userresources"'
+
+if grep -q $gdm_xsession_default /etc/gdm/Xsession
+	colorecho "Patching GDM Xsession"
+	sudo sed -i "s/$gdm_xsession_default/$gdm_xsession_replace/" /etc/gdm/Xsession
+end
 
 # vim: noet
