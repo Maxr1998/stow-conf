@@ -27,7 +27,7 @@ endif
 Plugin 'junegunn/goyo.vim'               " Writing mode
 Plugin 'lervag/vimtex'                   " TeX support
 Plugin 'godlygeek/tabular'               " Markdown support
-Plugin 'dag/vim-fish'
+Plugin 'dag/vim-fish'                    " fish script support
 Plugin 'wakatime/vim-wakatime'           " Time tracking
 call vundle#end()
 filetype plugin indent on
@@ -48,6 +48,9 @@ autocmd FileType yaml setlocal shiftwidth=2
 " TeX customisations
 autocmd FileType tex setlocal linebreak
 autocmd FileType tex setlocal conceallevel=0
+
+" Keep indent of #pragma directives in C files (e.g. #pragma omp ...)
+set cinoptions=P1
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal = 0
@@ -75,7 +78,7 @@ let g:tex_flavor = 'latex'
 let g:vim_markdown_conceal = 0
 
 " Goyo
-autocmd FileType tex Goyo 120x95%
+autocmd FileType tex Goyo 140x100%
 
 function! s:goyo_leave()
     quit
