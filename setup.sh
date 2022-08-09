@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 
+set enabled_modules desktop i3 terminal vim vscode
+
 function colorecho 
 	# Set color to cyan
 	tput setaf 4
@@ -52,13 +54,13 @@ end
 
 if count $argv > /dev/null
    and [ $argv[1] = "teardown" ]
-    for pkg in *
+    for pkg in */
+        set pkg (echo $dir | sed 's|/$||')
         colorecho "CURRENTLY UNLINKING $pkg"
         stow -D -t ~ "$pkg"
     end
 else
-    for dir in */
-        set pkg (echo $dir | sed 's|/$||')
+    for dir in $enabled_modules
         colorecho "CURRENTLY LINKING $pkg"
         stow -t ~ "$pkg"
     end
