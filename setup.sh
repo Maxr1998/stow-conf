@@ -54,15 +54,15 @@ end
 
 if count $argv > /dev/null
 	and [ $argv[1] = "teardown" ]
-	for pkg in */
-		set pkg (echo $dir | sed 's|/$||')
-		colorecho "CURRENTLY UNLINKING $pkg"
-		stow -D -t ~ "$pkg"
+	for dir in */
+		set mod (echo $dir | sed 's|/$||')
+		colorecho "CURRENTLY UNLINKING $mod"
+		stow -D -t ~ "$mod"
 	end
 else
-	for dir in $enabled_modules
-		colorecho "CURRENTLY LINKING $pkg"
-		stow -t ~ "$pkg"
+	for mod in $enabled_modules
+		colorecho "CURRENTLY LINKING $mod"
+		stow -t ~ "$mod"
 	end
 end
 
