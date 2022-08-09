@@ -1,5 +1,6 @@
 #!/usr/bin/fish
 
+set available_modules desktop gtk i3 rofi terminal vim vscode xorg
 set enabled_modules desktop gtk i3 rofi terminal vim vscode xorg
 
 function colorecho 
@@ -54,8 +55,7 @@ end
 
 if count $argv > /dev/null
 	and [ $argv[1] = "teardown" ]
-	for dir in */
-		set mod (echo $dir | sed 's|/$||')
+	for mod in $available_modules
 		colorecho "CURRENTLY UNLINKING $mod"
 		stow -D -t ~ "$mod"
 	end
