@@ -15,9 +15,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'tomasr/molokai'                 " Original Molokai
-Plugin 'flazz/vim-colorschemes'          " More color schemes
-Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
+Plugin 'junegunn/seoul256.vim'           " Seoul256 color scheme
+"Plugin 'Maxr1998/PrinterTheme'           " Color scheme for printing
 Plugin 'Yggdroot/indentLine'             " Mark leading spaces
 Plugin 'PeterRincker/vim-argumentative'  " Argument magic
 Plugin 'tpope/vim-fugitive'              " git integration
@@ -58,7 +57,9 @@ let @l = "/\\80i d79|l" " sanitize \\ indention
 
 " PLUGIN CONFIGURATION
 " Color scheme
-colorscheme molokai_dark
+let g:seoul256_srgb = 1
+let g:seoul256_background = 234
+colorscheme seoul256
 set termguicolors
 
 " indentLine
