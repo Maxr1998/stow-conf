@@ -13,8 +13,6 @@ function colorecho
 	tput sgr0
 end
 
-set -l I3_DIR i3/.config/i3
-
 if count $argv > /dev/null
 	and test $argv[1] = "pkg"
 	which pacman > /dev/null
@@ -26,7 +24,7 @@ if count $argv > /dev/null
 		echo
 		colorecho "Installing custom config package"
 		set stow_root "$PWD"
-		cd i3/.config/i3/arch_pkg/
+		cd packages/config
 		makepkg -fci
 		cd $stow_root
 		echo
