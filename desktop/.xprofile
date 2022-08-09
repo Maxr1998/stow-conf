@@ -30,7 +30,7 @@ elif [[ $(hostname) = "chell" ]]; then
 fi
 
 # Detect external monitors
-$HOME/.config/i3/utils/reload_xrandr
+xrandr-reload
 
 # Setup gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
