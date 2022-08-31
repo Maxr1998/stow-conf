@@ -4,7 +4,9 @@ set -gx VISUAL vim
 
 complete -c svim -w vim
 
-thefuck --alias | source
+if type -q thefuck
+    thefuck --alias | source
+end
 
 set -gx BAT_PAGER ""
 
@@ -23,7 +25,9 @@ export MPW_FULLNAME=Maxr1998
 
 set GITHUB_USER Maxr1998
 
-fzf_key_bindings
+if type -q fzf
+    fzf_key_bindings
+end
 
 # git autocompletion (by timm0e)
 #complete -c git -n "string match -r '^git clone.*' (commandline) > /dev/null ; echo $status" -a '(curl -Ls https://api.github.com/users/$GITHUB_USER/repos|jq ".[]|.clone_url" -c|string replace -a "\"" "")'
