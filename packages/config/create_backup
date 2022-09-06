@@ -170,7 +170,7 @@ info "Pruning repository"
 # The '{hostname}-' prefix limits the prune's operation to this machine's archives.
 eval $BORG_CMD prune                                                           \
     --list                                                                     \
-    --prefix '{hostname}-'                                                     \
+    --glob-archives '{hostname}-*'                                             \
     --show-rc                                                                  \
     --keep-daily    7                                                          \
     --keep-weekly   3                                                          \
