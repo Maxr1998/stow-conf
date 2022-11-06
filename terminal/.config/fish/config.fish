@@ -11,7 +11,7 @@ end
 set -gx BAT_PAGER ""
 
 # Environment
-set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $HOME/.local/bin/dart-sass $PATH
+set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
 
 set -gx ANDROID_HOME $HOME/Development/sdk
 set -gx NDK_BUNDLE $ANDROID_HOME/ndk-bundle
