@@ -36,6 +36,9 @@ xrandr-reload
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+# Setup default apps for xdg-open
+export BROWSER=vivaldi-stable
+
 # Set wallpaper
 $HOME/.fehbg
 
