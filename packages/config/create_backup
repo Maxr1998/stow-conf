@@ -8,72 +8,75 @@ BACKUP_OS=false
 EXCLUDE_FILE=`mktemp`
 
 EXCLUDES=(
-    'sh:**/*tmp*/'
-    'sh:**/*cache*/'
-    'sh:**/*Cache*/'
-    'sh:**/logs/'
-    'sh:**/lost+found*/'
-    'sh:**/*Trash*/'
-    'sh:**/*trash*/'
-    'sh:**/.luckyBackup/'
-    'sh:**/node_modules/'
-    '*.*~'
-    '*.log'
-    '*.nobak'
-    '*.nobak.???'
+    'sh:**/*.*~'
+    'sh:**/*.log'
+    'sh:**/*.nobak'
+    'sh:**/*.nobak.*'
+    'sh:**/*.temp'
+    'sh:**/*.tmp'
+    'sh:**/*[Cc]ache*'
+    'sh:**/*[Tt]rash*'
+    'sh:**/*_log'
+    'sh:**/.luckyBackup'
+    'sh:**/log'
+    'sh:**/logs'
+    'sh:**/lost+found'
+    'sh:**/node_modules'
+    'sh:**/temp'
+    'sh:**/tmp'
 )
 
 EXCLUDES_HOME=(
-    "sh:**/.env/"
-    "sh:**/unpack_*/"
-    "sh:$HOME/.android/avd/"
-    "sh:$HOME/.gradle/"
-    "sh:$HOME/.gradle-kotlin-dsl/"
-    "sh:$HOME/.local/share/lutris/runners/"
-    "sh:$HOME/.local/share/JetBrains/Toolbox/download/"
-    "sh:$HOME/.local/share/Steam/clientui/"
-    "sh:$HOME/.local/share/Steam/graphics/"
-    "sh:$HOME/.local/share/Steam/linux*/"
-    "sh:$HOME/.local/share/Steam/public/"
-    "sh:$HOME/.local/share/Steam/steamapps/common/"
-    "sh:$HOME/.local/share/Steam/steamapps/workshop/"
-    "sh:$HOME/.local/share/Steam/steamui/"
-    "sh:$HOME/.local/share/Steam/resource/"
-    "sh:$HOME/.local/share/Steam/tenfoot/"
-    "sh:$HOME/.local/share/Steam/ubuntu12_*/"
-    "sh:$HOME/.m2/"
-    "sh:$HOME/.nuget/packages/"
-    "sh:$HOME/.pyenv/"
-    "sh:$HOME/.rustup/downloads/"
-    "sh:$HOME/.rustup/toolchains/"
-    "sh:$HOME/Apps/go/src/*golang.org/"
-    "sh:$HOME/Apps/go/src/github.com/"
-    "sh:$HOME/Apps/go/pkg/"
-    "sh:$HOME/Development/**/.gradle/"
-    "sh:$HOME/Development/**/build/"
-    "sh:$HOME/Development/Linux/aur/*/pkg/"
-    "sh:$HOME/Development/Linux/aur/*/src/"
-    "sh:$HOME/Development/Linux/aur/*/*.pkg.*"
-    "sh:$HOME/Development/sdk/system-images/"
-    "sh:$HOME/Games/"
+    'sh:**/.env'
+    'sh:**/unpack_*'
+    'sh:home/*/.android/avd'
+    'sh:home/*/.config/*/Default/IndexedDB'
+    'sh:home/*/.gradle'
+    'sh:home/*/.gradle-kotlin-dsl'
+    'sh:home/*/.local/share/JetBrains/Toolbox/download'
+    'sh:home/*/.local/share/Steam/clientui'
+    'sh:home/*/.local/share/Steam/graphics'
+    'sh:home/*/.local/share/Steam/linux*'
+    'sh:home/*/.local/share/Steam/public'
+    'sh:home/*/.local/share/Steam/resource'
+    'sh:home/*/.local/share/Steam/steamapps/common'
+    'sh:home/*/.local/share/Steam/steamapps/workshop'
+    'sh:home/*/.local/share/Steam/steamui'
+    'sh:home/*/.local/share/Steam/tenfoot'
+    'sh:home/*/.local/share/Steam/ubuntu12_*'
+    'sh:home/*/.local/share/lutris/runners'
+    'sh:home/*/.m2'
+    'sh:home/*/.nuget'
+    'sh:home/*/.pyenv'
+    'sh:home/*/.rustup/downloads'
+    'sh:home/*/.rustup/toolchains'
+    'sh:home/*/Apps/go/pkg'
+    'sh:home/*/Apps/go/src'
+    'sh:home/*/Development/**/.gradle'
+    'sh:home/*/Development/**/build'
+    'sh:home/*/Development/Linux/aur/*/*.pkg.*'
+    'sh:home/*/Development/Linux/aur/*/pkg'
+    'sh:home/*/Development/Linux/aur/*/src'
+    'sh:home/*/Development/sdk/system-images'
+    'sh:home/*/Games'
 )
 
 EXCLUDES_OS=(
-    'sh:/@/'
-    'sh:/@home/'
-    'sh:/dev'
-    'sh:/home'
-    'sh:/media'
-    'sh:/mnt/'
-    'sh:/proc'
-    'sh:/run'
-    'sh:/snapshots'
-    'sh:/sys'
-    'sh:/usr/boost/'
-    'sh:/var/lib/docker/'
-    'sh:/var/lib/systemd/coredump'
-    'sh:/var/log/'
-    'sh:/var/run/'
+    'sh:@/'
+    'sh:@home/'
+    'sh:dev'
+    'sh:home'
+    'sh:media'
+    'sh:mnt/'
+    'sh:proc'
+    'sh:run'
+    'sh:snapshots'
+    'sh:sys'
+    'sh:usr/boost/'
+    'sh:var/lib/docker/'
+    'sh:var/lib/systemd/coredump'
+    'sh:var/log/'
+    'sh:var/run/'
 )
 
 # Parse arguments
@@ -186,14 +189,10 @@ eval $BORG_CMD compact
 # use highest exit code as global exit code
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
 
-if [ ${global_exit} -eq 1 ];
-then
-    info "Backup and/or Prune finished with a warning"
-fi
-
-if [ ${global_exit} -gt 1 ];
-then
-    info "Backup and/or Prune finished with an error"
+if [ ${global_exit} -eq 1 ]; then
+    info "Backup and/or prune finished with a warning"
+elif [ ${global_exit} -gt 1 ]; then
+    info "Backup and/or prune finished with an error"
 fi
 
 exit ${global_exit}
