@@ -3,6 +3,6 @@
 killall -qw picom
 
 # Launch picom
-picom --config ~/.config/picom/picom.conf --experimental-backend -b
+picom --config ~/.config/picom/picom.conf -b
 
 echo "Picom launched..."
