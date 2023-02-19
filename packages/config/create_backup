@@ -35,6 +35,7 @@ EXCLUDES_HOME=(
     'sh:home/*/.gradle-kotlin-dsl'
     'sh:home/*/.local/share/JetBrains/Toolbox/download'
     'sh:home/*/.local/share/Steam/clientui'
+    'sh:home/*/.local/share/Steam/compatibilitytools.d'
     'sh:home/*/.local/share/Steam/graphics'
     'sh:home/*/.local/share/Steam/linux*'
     'sh:home/*/.local/share/Steam/public'
