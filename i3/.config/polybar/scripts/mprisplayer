@@ -1,8 +1,8 @@
 #!/bin/sh
-PLAYER=$(playerctl -a metadata --format '{{playerName}}|{{xesam:title}}' | awk -F'|' '{ if ($2 != "") { printf $1; exit } }')
+PLAYER=$(playerctl -s -a metadata --format '{{playerName}}|{{xesam:title}}' | awk -F'|' '{ if ($2 != "") { printf $1; exit } }')
 
 if [[ -n "$PLAYER" ]]; then
-    playerctl -p $PLAYER metadata --format '{{xesam:artist}} ・ {{xesam:title}}'
+    playerctl -s -p $PLAYER metadata --format '{{xesam:artist}} ・ {{xesam:title}}'
 else
     echo ""
 fi
