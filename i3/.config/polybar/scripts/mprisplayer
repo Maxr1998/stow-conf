@@ -2,7 +2,7 @@
 PLAYER=$(playerctl -s -a metadata --format '{{playerName}}|{{xesam:title}}' | awk -F'|' '{ if ($2 != "") { printf $1; exit } }')
 
 if [[ -n "$PLAYER" ]]; then
-    playerctl -s -p $PLAYER metadata --format '{{xesam:artist}} ・ {{xesam:title}}'
+    playerctl -s -p $PLAYER metadata --format '{{xesam:artist}} ・ {{xesam:title}}' | cut -c -100
 else
     echo ""
 fi
