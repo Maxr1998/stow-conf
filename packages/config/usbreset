@@ -1,0 +1,2 @@
+# Allow everyone to reset the USB bluetooth modem
+ALL ALL = NOPASSWD: /usr/bin/usbreset 8087\:0029
