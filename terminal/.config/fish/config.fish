@@ -20,6 +20,8 @@ set -gx ANDROID_HVPROTO ddm
 
 set -gx GOPATH $HOME/Apps/go/
 
+set -gx PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
+
 # User info
 export MPW_FULLNAME=Maxr1998
 
