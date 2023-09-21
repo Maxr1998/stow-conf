@@ -80,6 +80,8 @@ EXCLUDES_OS=(
     'sh:var/lib/systemd/coredump'
     'sh:var/log/'
     'sh:var/run/'
+    'sh:opt/flutter/'
+    'sh:opt/rocm/'
 )
 
 # Parse arguments
