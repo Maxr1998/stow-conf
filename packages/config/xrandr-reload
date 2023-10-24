@@ -1,3 +1,11 @@
 #!/bin/sh
-# External screen xps13
-xrandr | grep -q '^DP1 connected' && xrandr --output DP1 --auto --left-of eDP1 || xrandr --auto
+# Setup external screen
+
+INTERNAL=$(xrandr | perl -n -e '/^(eDP-?.) connected/ && print $1')
+EXTERNAL=$(xrandr | perl -n -e '/^(DP-?.) connected/ && print $1')
+
+if [[ -n "$EXTERNAL" ]]; then
+    xrandr --output $EXTERNAL --auto --left-of $INTERNAL
+else
+    xrandr --auto
+fi
