@@ -1,15 +1,3 @@
-# Default programs
-set -gx EDITOR vim
-set -gx VISUAL vim
-
-complete -c svim -w vim
-
-if type -q thefuck
-    thefuck --alias | source
-end
-
-set -gx BAT_PAGER ""
-
 # Environment
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
 
@@ -22,11 +10,26 @@ set -gx GOPATH $HOME/Apps/go/
 
 set -gx PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
 
+# Default programs
+set -gx EDITOR vim
+set -gx VISUAL vim
+
+set -gx BAT_PAGER ""
+
 # User info
 export MPW_FULLNAME=Maxr1998
 
 set GITHUB_USER Maxr1998
 
-if status is-interactive; and type -q fzf
-    fzf_key_bindings
+# Commands to run in interactive sessions can go here
+if status is-interactive
+    complete -c svim -w vim
+
+    if type -q fzf
+        fzf_key_bindings
+    end
+
+    if type -q thefuck
+        thefuck --alias | source
+    end
 end
