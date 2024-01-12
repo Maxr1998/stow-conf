@@ -27,7 +27,7 @@ export MPW_FULLNAME=Maxr1998
 
 set GITHUB_USER Maxr1998
 
-if type -q fzf
+if status is-interactive; and type -q fzf
     fzf_key_bindings
 end
 
