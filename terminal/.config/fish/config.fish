@@ -30,7 +30,3 @@ set GITHUB_USER Maxr1998
 if status is-interactive; and type -q fzf
     fzf_key_bindings
 end
-
-# git autocompletion (by timm0e)
-#complete -c git -n "string match -r '^git clone.*' (commandline) > /dev/null ; echo $status" -a '(curl -Ls https://api.github.com/users/$GITHUB_USER/repos|jq ".[]|.clone_url" -c|string replace -a "\"" "")'
-
