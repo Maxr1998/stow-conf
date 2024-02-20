@@ -31,7 +31,7 @@ Xft.autohint: 0
     polybar.height: 26
 #endif
 
-#ifdef SRVR_xps13
-    Xft.dpi: 120
-    polybar.height: 28
+#ifdef SRVR_framework
+    Xft.dpi: 144
+    polybar.height: 34
 #endif
