@@ -148,17 +148,14 @@ client.background #000000
 # GNOME setup
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Start KDE Connnect
-exec --no-startup-id /usr/lib/kdeconnectd
+# Run XDG autostart entries
+exec dex -ae i3
 
 # Multi-monitor-setup
 bindsym Mod4+p exec --no-startup-id xrandr-reload
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# Setup compositor
-exec_always --no-startup-id ~/.config/picom/launch.sh
 
 # Start alternating layouts script
 exec_always --no-startup-id alternating_layouts.py
