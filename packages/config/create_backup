@@ -31,6 +31,7 @@ EXCLUDES_HOME=(
     'sh:**/unpack_*'
     'sh:home/*/.android/avd'
     'sh:home/*/.config/*/Default/IndexedDB'
+    'sh:home/*/.config/vivaldi/Default/VivaldiThumbnails'
     'sh:home/*/.cpanm/work'
     'sh:home/*/.dartServer'
     'sh:home/*/.gradle'
