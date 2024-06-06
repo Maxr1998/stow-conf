@@ -10,6 +10,16 @@ set -gx GOPATH $HOME/Apps/go/
 
 set -gx PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
 
+# Zoxide
+if type -q zoxide
+    zoxide init fish | source
+end
+
+# Pyenv
+if type -q pyenv
+    pyenv init - | source
+end
+
 # Default programs
 set -gx EDITOR vim
 set -gx VISUAL vim
