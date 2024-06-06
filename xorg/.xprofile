@@ -46,10 +46,10 @@ $HOME/.fehbg
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Setup IME
-if pacman -Q fcitx; then
+if pacman -Q fcitx5; then
     export GTK_IM_MODULE=fcitx
     export QT_IM_MODULE=fcitx
     export XMODIFIERS=@im=fcitx
 
-    fcitx &
+    fcitx5 &
 fi
