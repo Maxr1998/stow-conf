@@ -23,8 +23,6 @@ if [[ $(hostname) = "framework" ]]; then
     xrandr --dpi 144
 elif [[ $(hostname) = "GLaDOS" ]]; then
     xrandr --dpi 160 --output DisplayPort-0 --primary
-    export GDK_SCALE=2
-    export GDK_DPI_SCALE=0.5
 elif [[ $(hostname) = "chell" ]]; then
     xrandr --dpi 94.1 --output HDMI-A-0 --primary
 fi
