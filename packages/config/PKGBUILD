@@ -10,12 +10,14 @@ depends=("bash" "usbutils" "xorg-server")
 source=("zfs-mount-home"
         "create_backup"
         "xrandr-reload"
+        "polybar-run"
         "30-hid.conf"
         "i3lock@.service"
         "usbreset")
 b2sums=('ae6b96f6ec505cffafdbcef4992eaefef95713a576c42f9879e836630e1986032bdd4d1a45382224d159f3718b51198a00c64aa0af718a3a78e560e0374b495e'
         '789dc89cc99626937c40704f05748e296f50fc14b31634d49bbfe2ba281b10bceb652c49287220244502bb0cb22cb71537ff8cdfa248a94ce2448c7bb78fada8'
-        'c81e59fb35f3aeb54a656266ad0946dd20d1f9f70edf01284cfb91fbbc380feb286ae8829aa01029cc8e8584900f949c7e1e4408576345f51b247a56528d45f4'
+        '781205bbb7b08f90bd21d10d29ba517eb0fe89a63725100b22e3798b010cdff00f0463c422ad4490de3582b9f61e539d16a923018d89d005403d530195b2bf4f'
+        '0ac75517890383d36b0cefb12c657f544e24ba66967c8b8a23ef63e934cb213626324a5956e8448352eb6b67ed5ec6be789b9f711c5a880d6987216f1253e668'
         '02d6d2822fb08aae496016e37f28594a5311594f13b77d94dc93f354dc24d8f64b98051ce0cac21d4ca64b1e117ea822e5b3d7cbc92efdb2997aabea8bf3fb4a'
         '9ec724768d3802945544981cf2cda7180151dae6c215e878f3a37d8696849b64a34cbc0f5dc354768c088a7dceacfc577ec1a693f9804f1d5debd58225509293'
         'cd7aaca4520bcc433ccc13ad44557a1355cb928d59abd459d9f6819f4e89dbd9670df4afab9c14f64ef2fe391f31fa9780d8ac4996d99016d8f6a231cd382006')
@@ -28,6 +30,7 @@ package() {
     cp -f "zfs-mount-home" "$pkgdir/usr/bin/"
     cp -f "create_backup" "$pkgdir/usr/bin/"
     cp -f "xrandr-reload" "$pkgdir/usr/bin/"
+    cp -f "polybar-run" "$pkgdir/usr/bin/"
     cp -f "i3lock@.service" "$pkgdir/usr/lib/systemd/system/"
     cp -f "30-hid.conf" "$pkgdir/etc/X11/xorg.conf.d/"
     install -Dm0644 -t "$pkgdir/etc/sudoers.d/" usbreset

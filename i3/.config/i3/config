@@ -155,7 +155,7 @@ exec dex -ae i3
 bindsym Mod4+p exec --no-startup-id xrandr-reload
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id polybar-run
 
 # Start alternating layouts script
 exec_always --no-startup-id alternating_layouts.py
