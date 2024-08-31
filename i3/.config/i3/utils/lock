@@ -14,14 +14,24 @@ xset dpms 0 0 10
 W="ffffffff"
 B="00000000"
 
+WALLPAPER_FILE="$HOME/Bilder/Wallpapers/Lockscreen"
+# Find largest screen size
+SCREEN_SIZE=$(xrandr | grep "*" | awk '{ split($1, res, "x"); h = res[1]; v = res[2]; if (h > max_h || (h == max_h && v > max_v)) { max_h = h; max_v = v } } END { print max_h "x" max_v }')
 MARGIN=80
 
-i3lock -n -t -i "$HOME/Bilder/Wallpapers/Lockscreen.png" \
+WALLPAPER_CACHE_FILE="$HOME/Bilder/Wallpapers/Lockscreen_$SCREEN_SIZE"
+
+if [[ ! -f "$WALLPAPER_CACHE_FILE" ]]; then
+    magick $WALLPAPER_FILE -resize $SCREEN_SIZE^ -gravity center -crop $SCREEN_SIZE+0+0 +repage RGB:$WALLPAPER_CACHE_FILE
+fi
+
+i3lock -n -f -F --raw=$SCREEN_SIZE:rgb -i $WALLPAPER_CACHE_FILE \
+    --indicator \
     --ring-color=$W --separator-color=$B --line-uses-inside \
     --keyhl-color=d23c3dff --bshl-color=d23c3dff \
     --ringver-color=$W --ringwrong-color=$W \
     --inside-color=373445ff --insidever-color=fecf4dff --insidewrong-color=d23c3dff \
-    --indicator --force-clock \
+    --force-clock \
     --ind-pos="x+$MARGIN:y+h-$MARGIN" --radius=14 --ring-width=2.5 \
     --time-pos="x+$MARGIN+24:y+h-$MARGIN+12" --time-align=1 --time-color=$W \
     --date-str="" --verif-text="" --wrong-text="" --noinput-text=""
