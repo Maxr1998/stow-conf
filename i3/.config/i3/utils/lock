@@ -26,6 +26,7 @@ if [[ ! -f "$WALLPAPER_CACHE_FILE" ]]; then
 fi
 
 i3lock -n -f -F --raw=$SCREEN_SIZE:rgb -i $WALLPAPER_CACHE_FILE \
+    --redraw-thread \
     --indicator \
     --ring-color=$W --separator-color=$B --line-uses-inside \
     --keyhl-color=d23c3dff --bshl-color=d23c3dff \
