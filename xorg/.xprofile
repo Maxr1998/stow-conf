@@ -20,7 +20,7 @@ xset s off
 
 # Setup X screen and scaling
 if [[ $(hostname) = "framework" ]]; then
-    xrandr --dpi 144
+    xrandr --dpi 192
 elif [[ $(hostname) = "GLaDOS" ]]; then
     xrandr --dpi 160 --output DisplayPort-0 --primary
 elif [[ $(hostname) = "chell" ]]; then
