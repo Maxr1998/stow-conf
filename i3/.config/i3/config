@@ -221,11 +221,7 @@ for_window [class="^mpv$" floating_from="auto"] move position 2850 250
 
 # JetBrains IDE tweaks
 for_window [class="^jetbrains" title="^win0$"] floating enable
-for_window [class="^jetbrains" title="^Commit Changes$"] resize set $dialog_width_medium $dialog_height_medium
-for_window [class="^jetbrains" title="^Commit Changes$"] move position center
-for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] floating enable
-for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] resize set $dialog_width_large $dialog_height_large
-for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] move position center
+for_window [class="^jetbrains" title="^[\S]*\.[\S]* \([\S]*\)"] move container to workspace __focused__, fullscreen enable
 
 # Android Emulator
 for_window [title="^Android Emulator"] floating enable
