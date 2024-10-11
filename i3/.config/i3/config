@@ -206,8 +206,12 @@ floating_minimum_size 360 x 200
 floating_maximum_size $dialog_width_large x $dialog_height_large
 
 # Dialog fixes (force floating)
+for_window [window_role="alert"] floating enable
 for_window [title="^Steam Guard"] floating enable
 for_window [title="Microsoft Teams-Benachrichtigung"] floating enable
+
+# Focus rules
+no_focus [window_role="alert"]
 
 # Force Pavucontrol as dialog
 for_window [class="^Pavucontrol$"] floating enable
