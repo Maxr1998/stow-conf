@@ -28,8 +28,7 @@ font pango:Roboto 10
 floating_modifier $mod
 
 # Start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym Control+$mod+T exec i3-sensible-terminal
+bindsym Control+$mod+T exec wezterm-gui
 
 # Kill focused window
 bindsym $mod+Shift+q kill

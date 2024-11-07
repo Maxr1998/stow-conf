@@ -263,6 +263,7 @@ v4l2loopback-dkms
 valgrind
 vi
 vivaldi
+wezterm
 wget
 which
 whois
