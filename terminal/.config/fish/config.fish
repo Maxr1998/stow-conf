@@ -1,32 +1,40 @@
-# Environment
-set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
+### Environment ###
 
+# Tools
 set -gx ANDROID_HOME $HOME/Development/sdk
 set -gx NDK_BUNDLE $ANDROID_HOME/ndk-bundle
 set -gx NDK_ROOT $ANDROID_HOME/ndk/21.4.7075529
 set -gx ANDROID_HVPROTO ddm
 
-set -gx GOPATH $HOME/Apps/go/
+set -gx GOPATH $HOME/Apps/go
 
-set -gx PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
+# Path
+set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $GOPATH/bin $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
+
+# fish
+set -U fish_cursor_insert block
 
 # Zoxide
 if type -q zoxide
     zoxide init fish | source
 end
 
-# Pyenv
+# Python + Pyenv
+set -gx PYTHON_KEYRING_BACKEND keyring.backends.fail.Keyring
+
 if type -q pyenv
     pyenv init - | source
 end
 
-# Default programs
+### Default programs ###
+
 set -gx EDITOR vim
 set -gx VISUAL vim
 
 set -gx BAT_PAGER ""
 
-# User info
+### User info ###
+
 export MPW_FULLNAME=Maxr1998
 
 set GITHUB_USER Maxr1998
