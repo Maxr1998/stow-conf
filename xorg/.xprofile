@@ -38,7 +38,11 @@ export SSH_AUTH_SOCK
 export BROWSER=vivaldi-stable
 
 # Set wallpaper
-$HOME/.fehbg
+if [[ -d "$HOME/Wallpapers" ]]; then
+    systemd-run --on-calendar="*:0/5" --user -- /usr/bin/feh --no-fehbg --bg-fill --randomize -r $HOME/Wallpapers
+elif [[ -x "$HOME/.fehbg" ]]; then
+    $HOME/.fehbg
+fi
 
 # Set theme for QT5 apps
 export QT_QPA_PLATFORMTHEME=qt5ct
