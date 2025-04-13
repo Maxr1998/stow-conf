@@ -45,6 +45,9 @@ autocmd FileType html setlocal shiftwidth=2
 autocmd FileType json setlocal shiftwidth=2
 autocmd FileType yaml setlocal shiftwidth=2
 
+" Python formatter
+autocmd FileType python setlocal formatprg=black\ --quiet\ -l\ 120\ -\ 2>&1
+
 " TeX customisations
 autocmd FileType tex setlocal linebreak
 autocmd FileType tex setlocal conceallevel=0
