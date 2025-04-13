@@ -89,6 +89,19 @@ endfunction
 
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" Functions
+function! Interleave(start, end, where)
+    if a:start < a:where
+        for i in range(0, a:end - a:start)
+            execute a:start . 'm' . (a:where + i)
+        endfor
+    else
+        for i in range(a:end - a:start, 0, -1)
+            execute a:end . 'm' . (a:where + i)
+        endfor
+    endif
+endfunction
+
 " GVIM CONFIG
 if has("gui_running")
     set guifont=DankMono\ 13
