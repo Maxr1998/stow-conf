@@ -1,0 +1,6 @@
+# Some basic phrases for customer support
+matches:
+  - trigger: :reachout
+    replace: Please don't hesitate to reach out if you have any further questions.
+  - trigger: :freachout
+    replace: Please don't hesitate to reach out if you need anything in the future.
