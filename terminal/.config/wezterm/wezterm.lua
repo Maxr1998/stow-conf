@@ -49,7 +49,7 @@ config.colors = {
 }
 
 
-config.font = wezterm.font 'Dank Mono'
+config.font = wezterm.font_with_fallback { 'Dank Mono', 'Source Han Sans KR' }
 config.font_size = 14.0
 
 config.enable_scroll_bar = true
