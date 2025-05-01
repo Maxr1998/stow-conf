@@ -56,4 +56,12 @@ config.enable_scroll_bar = true
 config.force_reverse_video_cursor = true
 config.hide_tab_bar_if_only_one_tab = true
 
+config.keys = {
+    {
+        key = 'Enter',
+        mods = 'ALT',
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+}
+
 return config
