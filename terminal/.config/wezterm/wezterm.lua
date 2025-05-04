@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config.window_padding = {
     left = 0,
@@ -66,6 +67,22 @@ config.keys = {
         key = 'Enter',
         mods = 'ALT',
         action = wezterm.action.DisableDefaultAssignment,
+    },
+}
+
+-- Fix scroll speed on Wayland
+config.mouse_bindings = {
+    {
+        event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+        mods = 'NONE',
+        alt_screen = false,
+        action = act.ScrollByLine(-3),
+    },
+    {
+        event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+        mods = 'NONE',
+        alt_screen = false,
+        action = act.ScrollByLine(3),
     },
 }
 

@@ -1,0 +1,41 @@
+#!/bin/sh
+pgrep -x "sway" > /dev/null || exit 0
+
+# Debounce keys
+sleep 0.4
+
+echo "Locking screen"
+
+# Display options
+# xset dpms force off
+# xset dpms 0 0 10
+
+# Locking
+W="ffffffff"
+B="00000000"
+
+WALLPAPER_FILE="$HOME/Bilder/Wallpapers/Lockscreen"
+# Find largest screen size
+SCREEN_SIZE=3840x2160 #$(xrandr | grep "*" | awk '{ split($1, res, "x"); h = res[1]; v = res[2]; if (h > max_h || (h == max_h && v > max_v)) { max_h = h; max_v = v } } END { print max_h "x" max_v }')
+MARGIN=80
+
+WALLPAPER_CACHE_FILE="$HOME/Bilder/Wallpapers/Lockscreen_$SCREEN_SIZE"
+
+if [[ ! -f "$WALLPAPER_CACHE_FILE" ]]; then
+    magick $WALLPAPER_FILE -resize $SCREEN_SIZE^ -gravity center -crop $SCREEN_SIZE+0+0 +repage RGB:$WALLPAPER_CACHE_FILE
+fi
+
+swaylock -n -p -f -F -i $WALLPAPER_FILE.png \
+    --ring-color=$W --separator-color=$B --line-uses-inside \
+    --key-hl-color=d23c3dff --bs-hl-color=d23c3dff \
+    --ring-ver-color=$W --ring-wrong-color=$W \
+    --inside-color=373445ff --inside-ver-color=fecf4dff --inside-wrong-color=d23c3dff \
+    --indicator-x-position "$MARGIN" --indicator-y-position "h-$MARGIN" --indicator-radius=14 --indicator-thickness=2.5 \
+    #--time-pos="x+$MARGIN+24:y+h-$MARGIN+12" --time-align=1 --time-color=$W \
+    #--date-str="" --verif-text="" --wrong-text="" --noinput-text=""
+
+echo "Screen unlocked"
+
+# Display options
+# xset dpms 0 0 1800
+# EOF

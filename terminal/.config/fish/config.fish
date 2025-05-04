@@ -11,6 +11,10 @@ set -gx GOPATH $HOME/Apps/go
 # Path
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $GOPATH/bin $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
 
+# Application setup
+set -gx GPG_TTY (tty)
+set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/keyring/ssh
+
 # fish
 set -U fish_cursor_insert block
 

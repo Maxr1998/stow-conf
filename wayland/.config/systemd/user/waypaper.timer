@@ -1,0 +1,14 @@
+[Unit]
+Description=Set a random wallpaper every 5 minutes
+BindsTo=sway-session.target
+PartOf=sway-session.target
+After=sway-session.target
+
+[Timer]
+Persistent=true
+OnActiveSec=0
+OnCalendar=*:0/5
+AccuracySec=10
+
+[Install]
+WantedBy=sway-session.target

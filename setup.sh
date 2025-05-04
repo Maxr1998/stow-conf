@@ -1,9 +1,17 @@
 #!/usr/bin/fish
 
-set available_modules desktop gtk i3 rofi terminal vim vscode xorg
-set enabled_modules desktop gtk i3 rofi terminal vim vscode xorg
+set available_modules desktop gtk i3 rofi terminal vim vscode wayland xorg
 
-function colorecho 
+set enabled_modules desktop gtk rofi terminal vim vscode
+
+switch $XDG_SESSION_TYPE
+    case wayland
+        set enabled_modules $enabled_modules wayland
+    case x11
+        set enabled_modules $enabled_modules xorg
+end
+
+function colorecho
 	# Set color to cyan
 	tput setaf 4
 	# Make text bold

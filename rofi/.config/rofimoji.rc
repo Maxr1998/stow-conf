@@ -1,3 +1,2 @@
 action=copy
-clipboarder=xsel
 selector-args="-dpi 0"

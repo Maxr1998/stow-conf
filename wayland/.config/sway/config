@@ -1,0 +1,96 @@
+# sway config file
+
+bar {
+    swaybar_command waybar
+}
+
+### VARIABLES
+
+set $mod Mod1
+set $mode_resize "Fenster anpassen"
+set $bar_background #000000
+
+set $dialog_width_small 480
+set $dialog_height_small 270
+set $dialog_width_medium 1280
+set $dialog_height_medium 800
+set $dialog_width_large 1800
+set $dialog_height_large 1000
+set $dialog_width_emulator 300
+set $dialog_height_emulator 720
+
+### BORDERS
+
+font pango:Roboto 9
+
+titlebar_padding 5 3
+default_border pixel 2
+default_floating_border normal
+hide_edge_borders smart
+
+# Colors setup
+client.focused #333333 #333333 #ffffff
+client.focused_inactive #333333 #212121 #fafafa
+client.unfocused #212121 #212121 #fafafa
+client.background #000000
+
+### BEHAVIOR
+
+focus_follows_mouse always
+
+### KEYBINDINGS
+
+# Application launcher
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --usage-log="$HOME/.cache/dmenu_usage.log" --use-xdg-de --no-generic --dmenu="rofi -dmenu -i -window-title 'Anwendung' -dpi 0"
+# Raw command runner
+bindsym $mod+x exec --no-startup-id rofi -dmenu -i -window-title 'cmd' -theme-str 'listview { lines: 0; }' | xargs -r swaymsg exec
+# Start a terminal
+bindsym Control+$mod+T exec wezterm
+
+# Clipboard history
+bindsym $mod+c exec --no-startup-id cliphist list | rofi -dmenu -p 'Verlauf durchsuchen' -display-columns 2 | cliphist decode | wl-copy
+
+# Notification center
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
+# Emoji picker
+bindsym $mod+e exec --no-startup-id rofimoji
+
+# Power key/lock setup
+bindsym XF86PowerOff exec --no-startup-id ~/.config/sway/utils/lock
+bindsym Mod4+l exec --no-startup-id ~/.config/sway/utils/lock
+
+# Power menu
+bindsym $mod+Shift+e exec --no-startup-id shutdown-dialog
+
+# Media keys
+set $audio ~/.local/lib/audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id $audio raise
+bindsym XF86AudioLowerVolume exec --no-startup-id $audio lower
+bindsym XF86AudioMute exec --no-startup-id $audio mute
+
+#bindsym XF86AudioPlay exec playerctl --player=playerctld play
+#bindsym XF86AudioPause exec playerctl --player=playerctld pause
+bindsym XF86AudioNext exec playerctl --player=playerctld next
+bindsym XF86AudioPrev exec playerctl --player=playerctld previous
+
+# Macropad
+bindcode 196 exec playerctl --player=playerctld volume 0.02-
+bindcode 197 exec playerctl --player=playerctld volume 0.02+
+bindcode 198 exec playerctl --player=playerctld play-pause
+
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id notify-send -i "weather-clear" -h string:synchronous:volume -h int:value:"$(brightnessctl set +5% | awk '/\(/{print $4}' | tr -d '(' | tr -d '%)')" "Helligkeit"
+bindsym XF86MonBrightnessDown exec --no-startup-id notify-send -i "weather-clear" -h string:synchronous:volume -h int:value:"$(brightnessctl set 5%- | awk '/\(/{print $4}' | tr -d '(' | tr -d '%)')" "Helligkeit"
+
+# Screenshot
+bindsym Control+Print exec --no-startup-id flameshot gui
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Import system configuration
+include /etc/sway/config.d/*
+
+# Import user configuration
+include config.d/*

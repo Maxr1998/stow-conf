@@ -12,6 +12,11 @@
 # Disable search shortcut
 search_shortcut: OFF
 
+# Explicitly set keyboard layout for Wayland
+keyboard_layout:
+  layout: "de"
+  variant: "nodeadkeys"
+
 # --- Toggle key
 
 # Customize the key used to disable and enable espanso (when double tapped)
