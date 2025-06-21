@@ -164,7 +164,7 @@ bindsym XF86PowerOff exec --no-startup-id ~/.config/i3/utils/lock
 bindsym Mod4+l exec --no-startup-id ~/.config/i3/utils/lock
 
 # Media keys
-set $audio ~/.config/i3/utils/audio
+set $audio ~/.local/lib/audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id $audio raise
 bindsym XF86AudioLowerVolume exec --no-startup-id $audio lower
 bindsym XF86AudioMute exec --no-startup-id $audio mute
