@@ -1,5 +1,0 @@
-[Unit]
-Description=Apply GPU settings
-
-[Service]
-ExecStart=/usr/bin/amdgputuner
