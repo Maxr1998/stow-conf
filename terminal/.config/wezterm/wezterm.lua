@@ -48,8 +48,13 @@ config.colors = {
     --indexed = { [136] = '#af8700' },
 }
 
-
-config.font = wezterm.font_with_fallback { 'Dank Mono', 'Source Han Sans KR' }
+config.font = wezterm.font_with_fallback {
+    'Dank Mono',
+    'Source Han Sans KR',
+    'Source Han Sans JP',
+    'Source Han Sans CN',
+    'Source Han Sans TW',
+}
 config.font_size = 14.0
 
 config.enable_scroll_bar = true
