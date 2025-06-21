@@ -1,0 +1,4 @@
+#!/bin/sh
+pactl set-card-profile bluez_card.00_1B_66_8F_7E_65 a2dp-sink-aptx_ll
+sleep 1
+pactl set-card-profile bluez_card.00_1B_66_8F_7E_65 a2dp-sink
