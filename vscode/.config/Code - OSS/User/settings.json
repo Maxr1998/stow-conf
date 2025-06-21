@@ -2,6 +2,8 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
+    "clang-format.language.c.enable": true,
+    "clang-format.style": "file",
     "editor.fontFamily": "'Dank Mono','Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fontSize": 17,
@@ -71,10 +73,8 @@
     },
     "liveshare.featureSet": "stable",
     "platformio-ide.useBuiltinPIOCore": true,
-    "revealjs.browserPath": "/usr/bin/google-chrome-stable",
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.rendererType": "dom",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "workbench.colorTheme": "Cobalt2",
-    "workbench.settings.editor": "json",
+    "workbench.settings.editor": "json"
 }
