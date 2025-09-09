@@ -7,7 +7,10 @@ i3 = i3ipc.Connection()
 def on_window_event(i3, e):
     con = e.container
     if e.change == "floating" and con.name is not None:
-        if con.name == "Bild-in-Bild":
+        if con.name == "Emulator":
+            con.command("border pixel 0")
+            con.command("resize 61 512")
+        elif con.name == "Bild-in-Bild":
             con.command("border pixel 0")
             con.command("sticky enable")
         else:
