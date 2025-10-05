@@ -58,11 +58,13 @@ EXCLUDES_HOME=(
     'sh:home/*/Apps/go/src'
     'sh:home/*/Development/**/.gradle'
     'sh:home/*/Development/**/build'
+    'sh:home/*/Development/**/.fvm'
     'sh:home/*/Development/**/flutter_build'
     'sh:home/*/Development/Linux/aur/*/*.pkg.*'
     'sh:home/*/Development/Linux/aur/*/pkg'
     'sh:home/*/Development/Linux/aur/*/src'
     'sh:home/*/Development/sdk/system-images'
+    'sh:home/*/fvm'
     'sh:home/*/Games'
 )
 
