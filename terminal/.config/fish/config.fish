@@ -9,7 +9,7 @@ set -gx ANDROID_HVPROTO ddm
 set -gx GOPATH $HOME/Apps/go
 
 # Path
-set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH $GOPATH/bin $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
+set -gx PATH $HOME/.local/bin $HOME/fvm/default/bin $HOME/.cargo/bin $PATH $GOPATH/bin $HOME/.local/bin/dart-sass $HOME/.local/share/JetBrains/Toolbox/scripts
 
 # Application setup
 set -gx GPG_TTY (tty)
