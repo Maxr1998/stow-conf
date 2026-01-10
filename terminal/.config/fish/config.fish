@@ -16,7 +16,8 @@ set -gx GPG_TTY (tty)
 set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/keyring/ssh
 
 # fish
-set -U fish_cursor_insert block
+set -g fish_key_bindings fish_vi_key_bindings
+set -g fish_cursor_insert block
 
 # Zoxide
 if type -q zoxide
