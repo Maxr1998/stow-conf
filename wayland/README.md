@@ -5,3 +5,4 @@
 - `swaybg`
 - `waypaper`
 - `swaylock-fprintd-git`
+- `swayidle`
