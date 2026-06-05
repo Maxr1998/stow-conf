@@ -1,0 +1,14 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "widgets": [
+    "inhibitors",
+    "dnd",
+    "mpris",
+    "notifications"
+  ],
+  "widget_config": {
+    "mpris": {
+      "autohide": true
+    }
+  }
+}
