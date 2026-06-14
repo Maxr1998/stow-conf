@@ -6,32 +6,23 @@ pkgdesc="Maxr1998's system scripts and config"
 arch=("any")
 url="https://github.com/Maxr1998/stow-conf"
 license=('WTFPL')
-depends=("bash" "usbutils" "xorg-server")
-source=("zfs-mount-home"
-        "create_backup"
-        "xrandr-reload"
-        "polybar-run"
-        "30-hid.conf"
-        "i3lock@.service"
-        "usbreset")
-b2sums=('cea8f6cdf2082a657c8149919d0fba7442d035848ae16a4d69ec534e86c19d97a2ec0132bb9cf8321d13819db6a42743ce03cf821484da944b5ff56e9df33502'
-        '64dfa5bfb6811bc8fc6d3cd414661e2c410ad51d15230f81b748f4c829bcc876d0618d797d4327e2bdbad5501899fed771b24645c7bac4993cae933c50be20cb'
-        '781205bbb7b08f90bd21d10d29ba517eb0fe89a63725100b22e3798b010cdff00f0463c422ad4490de3582b9f61e539d16a923018d89d005403d530195b2bf4f'
-        '0ac75517890383d36b0cefb12c657f544e24ba66967c8b8a23ef63e934cb213626324a5956e8448352eb6b67ed5ec6be789b9f711c5a880d6987216f1253e668'
-        '1e1f80daa2bc0d17da940bbc7ee425283d69104d1aa6b293568abdc443b8af7eba731e22d2367c7b2157931920d1b105e404063c4fa9704573d28a33b4e5b87b'
-        '9ec724768d3802945544981cf2cda7180151dae6c215e878f3a37d8696849b64a34cbc0f5dc354768c088a7dceacfc577ec1a693f9804f1d5debd58225509293'
-        'cd7aaca4520bcc433ccc13ad44557a1355cb928d59abd459d9f6819f4e89dbd9670df4afab9c14f64ef2fe391f31fa9780d8ac4996d99016d8f6a231cd382006')
+depends=("bash" "usbutils")
+source=("create_backup"
+        "login.sh"
+        "usbreset"
+        "zfs-mount-home")
+b2sums=('64dfa5bfb6811bc8fc6d3cd414661e2c410ad51d15230f81b748f4c829bcc876d0618d797d4327e2bdbad5501899fed771b24645c7bac4993cae933c50be20cb'
+        '6b46d7a4cffc41f512d87c7a4ef340e8754a885051ad3ad28ea2f212785f9969416bb54d6efdacf908053424f2472aa78484f29b2d3cedbdc0571826f8f53bed'
+        'cd7aaca4520bcc433ccc13ad44557a1355cb928d59abd459d9f6819f4e89dbd9670df4afab9c14f64ef2fe391f31fa9780d8ac4996d99016d8f6a231cd382006'
+        'cea8f6cdf2082a657c8149919d0fba7442d035848ae16a4d69ec534e86c19d97a2ec0132bb9cf8321d13819db6a42743ce03cf821484da944b5ff56e9df33502')
 
 package() {
     cd "$srcdir"
+    mkdir -p "$pkgdir/etc/ly/"
     mkdir -p "$pkgdir/usr/bin/"
     mkdir -p "$pkgdir/usr/lib/systemd/system/"
-    mkdir -p "$pkgdir/etc/X11/xorg.conf.d/"
+    cp -f "login.sh" "$pkgdir/etc/ly/"
     cp -f "zfs-mount-home" "$pkgdir/usr/bin/"
     cp -f "create_backup" "$pkgdir/usr/bin/"
-    cp -f "xrandr-reload" "$pkgdir/usr/bin/"
-    cp -f "polybar-run" "$pkgdir/usr/bin/"
-    cp -f "i3lock@.service" "$pkgdir/usr/lib/systemd/system/"
-    cp -f "30-hid.conf" "$pkgdir/etc/X11/xorg.conf.d/"
     install -Dm0644 -t "$pkgdir/etc/sudoers.d/" usbreset
 }
