@@ -1,0 +1,4 @@
+# Customize monitor position
+output "LG Electronics 27GN950 008NTXR1Q842" {
+    pos -1920 0
+}
