@@ -9,6 +9,7 @@
     "custom/media"
   ],
   "modules-right": [
+    "custom/iceportal",
     "bluetooth",
     "pulseaudio",
     "cpu",
@@ -31,6 +32,14 @@
     "on-click": "playerctl -i \"chromium\" play-pause",
     "on-double-click": "playerctl -i \"chromium\" next",
     "on-double-click-right": "playerctl -i \"chromium\" previous"
+  },
+  "custom/iceportal": {
+    "exec-if": "test $(iwgetid -r) == 'WIFIonICE'",
+    "format": " {}",
+    "exec": "~/.config/waybar/scripts/iceportal",
+    "return-type": "json",
+    "interval": 10,
+    "on-click": "echo"
   },
   "bluetooth": {
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",

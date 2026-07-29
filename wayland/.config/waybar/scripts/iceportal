@@ -1,0 +1,83 @@
+#!/bin/sh
+# Waybar module showing ICE Portal train info, next stops and WiFi status.
+# Prints nothing when the portal isn't reachable (not in an ICE, WiFi down).
+#
+# Inspired by and tooltip layout adapted from e1mo/waybar-iceportal (GPL-3.0):
+# https://github.com/e1mo/waybar-iceportal
+
+api() {
+    curl -sf --max-time 5 "https://iceportal.de/api1/rs/$1" \
+        -H 'Accept: application/json, text/plain, */*' \
+        -H 'Cache-Control: no-cache' \
+        -H 'Pragma: no-cache' \
+        -H 'Referer: https://iceportal.de/'
+}
+
+status=$(api status) || exit 0
+trip=$(api tripInfo/trip) || exit 0
+
+# Map of series → model name, e.g. 411 → ICE T
+models=$(jq -c .series "$(dirname "$0")/iceportal-series.json" 2>/dev/null) || models='{}'
+
+printf '%s\n%s\n' "$status" "$trip" | jq -src --argjson models "$models" '
+def esc: gsub("&"; "&amp;") | gsub("<"; "&lt;") | gsub(">"; "&gt;");
+def hhmm: if . == null then null else . / 1000 | strflocaltime("%H:%M") end;
+def paren: if (. // "") == "" then "" else " (\(.))" end;
+def quality: if . == null then "?" else
+    {"HIGH": "hoch", "MIDDLE": "mittel", "WEAK": "schwach",
+     "UNSTABLE": "instabil", "NO_INFO": "keine Angabe"}[.] // ascii_downcase
+end;
+
+.[0] as $status | .[1].trip as $trip |
+
+($status.speed | round) as $speed |
+(if $status.wagonClass == "FIRST" then "1." else "2." end) as $class |
+
+# Stops still ahead of us, the one we are currently standing in included
+[ $trip.stops[] | select(.info.passed == false or .info.positionStatus == "arrived") |
+    (.station.evaNr == $trip.stopInfo.actualNext) as $current |
+    .timetable as $t |
+    ($t.actualArrivalTime // $t.scheduledArrivalTime | hhmm) as $arrival |
+    ($t.actualDepartureTime // $t.scheduledDepartureTime | hhmm) as $departure |
+    (.station.name | esc) as $name |
+    # Without an arrival time, fall back to the departure of the current stop
+    ("um \($arrival // (if $current then $departure else null end) // "unbekannt")"
+        + ($t.arrivalDelay | paren)
+        + (if $departure == null then "" else " — \($departure)\($t.departureDelay | paren)" end)
+    ) as $times |
+    {
+        current: $current,
+        bar: "\($name) \($times)",
+        tooltip: "\($name) (Gl. \(.track.actual // "?")) \($times)",
+    }
+] as $stops |
+
+$status.connectivity as $wifi |
+(if $wifi.remainingTimeSeconds == null then "???" else
+    "\($wifi.nextState | quality) in " +
+    ($wifi.remainingTimeSeconds | "\(. / 60 | floor):\(. % 60 | tostring | ("0" * (2 - length)) + .)")
+end) as $wifi_change |
+
+{
+    text: "\($speed) km/h" + ([$stops[] | select(.current) | " · \(.bar)"] | first // ""),
+    tooltip: ([
+        "<u><b>\($trip.trainType)\($trip.vzn) → \($trip.stopInfo.finalStationName | split(" ")[0] | esc)</b></u>",
+        "\($trip.stops[0].station.name | esc) → \($trip.stopInfo.finalStationName | esc)",
+        ([ $models[$status.series // ""] as $model |
+            if $model then "\($model) (BR \($status.series))"
+            elif $status.series then "BR \($status.series)"
+            else null end,
+           $status.tzn ] | map(select(.)) | join(" / ")),
+        "\($class) Klasse",
+        "\($speed) km/h",
+        "",
+        "<b>Nächste Halte</b>"
+    ] + [ $stops[] | if .current then "<i>\(.tooltip)</i>" else .tooltip end ] + [
+        "",
+        "<b>WLAN</b>",
+        "Qualität: \($wifi.currentState | quality)",
+        "Wechsel zu \($wifi_change)",
+        "<i>Letzte Serverzeit: \($status.serverTime / 1000 | strflocaltime("%d.%m.%Y %H:%M:%S"))</i>"
+    ] | join("\n")),
+}
+'

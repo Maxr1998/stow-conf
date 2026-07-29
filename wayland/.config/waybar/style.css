@@ -75,6 +75,7 @@ button:hover {
 
 #mode,
 #custom-media,
+#custom-iceportal,
 #battery,
 #bluetooth,
 #pulseaudio,
@@ -168,6 +169,10 @@ label:focus {
 
 #custom-media {
     box-shadow: inset 0 -2px #1db954;
+}
+
+#custom-iceportal {
+    box-shadow: inset 0 -2px #ec0016;
 }
 
 #temperature {

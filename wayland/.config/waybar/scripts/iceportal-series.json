@@ -1,0 +1,17 @@
+{
+  "description": "Map of ICE series (Baureihe / `status.series`) to ICE model names, used by the iceportal Waybar module",
+  "source": "https://github.com/leoMehlig/DBConnect/blob/733ed56de91bc10e538b587bc71c55b963073259/Sources/DBConnect/ICETrainMapping.swift",
+  "notes": "The ICE L (BR105) is not from the source above and unverified",
+  "series": {
+    "105": "ICE L",
+    "401": "ICE 1",
+    "402": "ICE 2",
+    "403": "ICE 3",
+    "406": "ICE 3",
+    "407": "ICE 3",
+    "408": "ICE 3 Neo",
+    "411": "ICE T",
+    "412": "ICE 4",
+    "415": "ICE T"
+  }
+}
