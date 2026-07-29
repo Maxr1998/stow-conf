@@ -26,7 +26,7 @@
   "custom/media": {
     "max-length": 60,
     "format": "  {}",
-    "exec": "~/.config/polybar/scripts/mprisplayer",
+    "exec": "~/.config/waybar/scripts/mprisplayer",
     "interval": 3,
     "on-click": "playerctl -i \"chromium\" play-pause",
     "on-double-click": "playerctl -i \"chromium\" next",
@@ -67,7 +67,7 @@
   },
   "custom/updates": {
     "format": " {}",
-    "exec": "~/.config/polybar/scripts/updates",
+    "exec": "~/.config/waybar/scripts/updates",
     "interval": 600
   },
   "clock": {
