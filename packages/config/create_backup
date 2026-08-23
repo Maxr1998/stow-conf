@@ -81,6 +81,7 @@ EXCLUDES_OS=(
     'sh:sys'
     'sh:usr/boost/'
     'sh:var/lib/docker/'
+    'sh:var/lib/ollama/'
     'sh:var/lib/systemd/coredump'
     'sh:var/log/'
     'sh:var/run/'
